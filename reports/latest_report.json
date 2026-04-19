@@ -1,0 +1,15 @@
+{
+  "run_id": "pending",
+  "date": "\u2014",
+  "run_started": null,
+  "run_completed": null,
+  "overall_status": "UNAVAILABLE",
+  "total_checks": 0,
+  "passed": 0,
+  "warnings": 0,
+  "failed": 0,
+  "clients": [],
+  "errors": [
+    "No runs completed yet. Agent runs daily at 07:00 IST."
+  ]
+}
