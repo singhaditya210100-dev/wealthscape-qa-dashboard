@@ -1,15 +1,434 @@
 {
-  "run_id": "pending",
-  "date": "\u2014",
-  "run_started": null,
-  "run_completed": null,
-  "overall_status": "UNAVAILABLE",
-  "total_checks": 0,
-  "passed": 0,
+  "run_id": "af854b58",
+  "date": "2026-04-19",
+  "run_started": "2026-04-19T16:24:57.909374",
+  "run_completed": "2026-04-19T16:25:08.969772",
+  "overall_status": "FAIL",
+  "total_checks": 30,
+  "passed": 10,
   "warnings": 0,
-  "failed": 0,
-  "clients": [],
-  "errors": [
-    "No runs completed yet. Agent runs daily at 07:00 IST."
-  ]
+  "failed": 14,
+  "clients": [
+    {
+      "name": "Dhanprayoga",
+      "environment": "UAT",
+      "status": "FAIL",
+      "total_checks": 20,
+      "passed": 9,
+      "warnings": 0,
+      "failed": 8,
+      "run_started": "2026-04-19T16:24:57.910887",
+      "run_completed": "2026-04-19T16:25:05.684474",
+      "phases": [
+        {
+          "phase_number": 1,
+          "phase_name": "Holdings & ISIN Validation",
+          "status": "FAIL",
+          "total": 1,
+          "passed": 0,
+          "warnings": 0,
+          "failed": 1,
+          "checks": [
+            {
+              "check_id": "BR-ULA-05",
+              "description": "Holdings API reachable",
+              "status": "FAIL",
+              "details": "API returned 401",
+              "raw_response": "Failed to obtain authentication token",
+              "tolerance": ""
+            }
+          ]
+        },
+        {
+          "phase_number": 2,
+          "phase_name": "Transactions Check",
+          "status": "FAIL",
+          "total": 5,
+          "passed": 2,
+          "warnings": 0,
+          "failed": 3,
+          "checks": [
+            {
+              "check_id": "BR-STMT-02",
+              "description": "All required fields present",
+              "status": "PASS",
+              "details": "Records with missing fields: 0/186",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-STMT-02",
+              "description": "txnId is unique",
+              "status": "FAIL",
+              "details": "Duplicate txnIds: 76",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-STMT-03",
+              "description": "Transaction types are valid",
+              "status": "FAIL",
+              "details": "Invalid types found: 2 unique types",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-STMT-04",
+              "description": "Amount \u2248 units \u00d7 nav (\u00b1\u20b91)",
+              "status": "FAIL",
+              "details": "Records with calculation errors: 168",
+              "raw_response": "",
+              "tolerance": "\u00b1\u20b91"
+            },
+            {
+              "check_id": "BR-STMT-05",
+              "description": "Tax fields valid and sum correctly",
+              "status": "PASS",
+              "details": "Records with tax errors: 0",
+              "raw_response": "",
+              "tolerance": ""
+            }
+          ]
+        },
+        {
+          "phase_number": 3,
+          "phase_name": "Insights & Analysis",
+          "status": "FAIL",
+          "total": 5,
+          "passed": 3,
+          "warnings": 0,
+          "failed": 2,
+          "checks": [
+            {
+              "check_id": "BR-INS-01",
+              "description": "totalHoldings = 27",
+              "status": "FAIL",
+              "details": "API: 12 | Expected: 27",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-INS-01",
+              "description": "currentValue matches reference",
+              "status": "FAIL",
+              "details": "API: \u20b96661570.04 | Ref: \u20b9472491.01 | Delta: \u20b96189079.03",
+              "raw_response": "",
+              "tolerance": "\u00b1\u20b9100"
+            },
+            {
+              "check_id": "BR-INS-02",
+              "description": "Return calculations correct",
+              "status": "PASS",
+              "details": "Absolute return delta: \u20b90.01",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-INS-03",
+              "description": "Category distribution sums to current value",
+              "status": "PASS",
+              "details": "Sum: \u20b96661570.05 | Current: \u20b96661570.04 | Delta: \u20b90.01",
+              "raw_response": "",
+              "tolerance": "\u00b1\u20b91"
+            },
+            {
+              "check_id": "BR-ANA-01",
+              "description": "Analysis/Insights currentValue consistent",
+              "status": "PASS",
+              "details": "Insights: \u20b96661570.04 | Analysis: \u20b96661570.01",
+              "raw_response": "",
+              "tolerance": ""
+            }
+          ]
+        },
+        {
+          "phase_number": 4,
+          "phase_name": "Cross-API Consistency",
+          "status": "PASS",
+          "total": 3,
+          "passed": 3,
+          "warnings": 0,
+          "failed": 0,
+          "checks": [
+            {
+              "check_id": "BR-ANA-01",
+              "description": "currentValue consistent across 3 APIs",
+              "status": "PASS",
+              "details": "Source1: \u20b96661570.04 | Source2: \u20b96661570.04 | Source3: \u20b96661570.01 | Max delta: \u20b90.03",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-ANA-01",
+              "description": "totalHoldings consistent across 3 APIs",
+              "status": "PASS",
+              "details": "Source1: 12 | Source2: 12 | Source3: 12",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-ANA-02",
+              "description": "Scheme categories sum to total",
+              "status": "PASS",
+              "details": "Sum: \u20b96661570.01 | Total: \u20b96661570.01",
+              "raw_response": "",
+              "tolerance": ""
+            }
+          ]
+        },
+        {
+          "phase_number": 5,
+          "phase_name": "Negative / Edge Case Tests",
+          "status": "FAIL",
+          "total": 4,
+          "passed": 1,
+          "warnings": 0,
+          "failed": 2,
+          "checks": [
+            {
+              "check_id": "BR-GEN-07",
+              "description": "Missing uniqueIdentifier \u2192 400",
+              "status": "PASS",
+              "details": "Expected 400, got 400",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-GEN-07",
+              "description": "Empty uniqueIdentifier \u2192 400",
+              "status": "FAIL",
+              "details": "Expected 400, got 406",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-GEN-08",
+              "description": "SQLi input \u2192 400 (no 500)",
+              "status": "FAIL",
+              "details": "Expected 4xx, got 406",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-GEN-10",
+              "description": "No Content-Type header \u2192 415",
+              "status": "SKIP",
+              "details": "Header validation requires custom HTTP client",
+              "raw_response": "",
+              "tolerance": ""
+            }
+          ]
+        },
+        {
+          "phase_number": 6,
+          "phase_name": "SLA Performance",
+          "status": "UNAVAILABLE",
+          "total": 1,
+          "passed": 0,
+          "warnings": 0,
+          "failed": 0,
+          "checks": [
+            {
+              "check_id": "SLA-01",
+              "description": "OpenSearch connection",
+              "status": "UNAVAILABLE",
+              "details": "OpenSearch not available or not configured",
+              "raw_response": "",
+              "tolerance": ""
+            }
+          ]
+        },
+        {
+          "phase_number": 7,
+          "phase_name": "Webhook Validation",
+          "status": "UNAVAILABLE",
+          "total": 1,
+          "passed": 0,
+          "warnings": 0,
+          "failed": 0,
+          "checks": [
+            {
+              "check_id": "BR-WH-01",
+              "description": "Webhook events available",
+              "status": "UNAVAILABLE",
+              "details": "OpenSearch not available or not configured",
+              "raw_response": "",
+              "tolerance": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Crest",
+      "environment": "PROD",
+      "status": "FAIL",
+      "total_checks": 10,
+      "passed": 1,
+      "warnings": 0,
+      "failed": 6,
+      "run_started": "2026-04-19T16:25:05.686166",
+      "run_completed": "2026-04-19T16:25:08.969738",
+      "phases": [
+        {
+          "phase_number": 1,
+          "phase_name": "Holdings & ISIN Validation",
+          "status": "FAIL",
+          "total": 1,
+          "passed": 0,
+          "warnings": 0,
+          "failed": 1,
+          "checks": [
+            {
+              "check_id": "BR-ULA-05",
+              "description": "Holdings API reachable",
+              "status": "FAIL",
+              "details": "API returned 401",
+              "raw_response": "Failed to obtain authentication token",
+              "tolerance": ""
+            }
+          ]
+        },
+        {
+          "phase_number": 2,
+          "phase_name": "Transactions Check",
+          "status": "FAIL",
+          "total": 1,
+          "passed": 0,
+          "warnings": 0,
+          "failed": 1,
+          "checks": [
+            {
+              "check_id": "BR-STMT-01",
+              "description": "Transactions API reachable",
+              "status": "FAIL",
+              "details": "API returned 401",
+              "raw_response": "Failed to obtain authentication token",
+              "tolerance": ""
+            }
+          ]
+        },
+        {
+          "phase_number": 3,
+          "phase_name": "Insights & Analysis",
+          "status": "FAIL",
+          "total": 1,
+          "passed": 0,
+          "warnings": 0,
+          "failed": 1,
+          "checks": [
+            {
+              "check_id": "BR-INS-01",
+              "description": "Insights API reachable",
+              "status": "FAIL",
+              "details": "API returned 401",
+              "raw_response": "Failed to obtain authentication token",
+              "tolerance": ""
+            }
+          ]
+        },
+        {
+          "phase_number": 4,
+          "phase_name": "Cross-API Consistency",
+          "status": "FAIL",
+          "total": 1,
+          "passed": 0,
+          "warnings": 0,
+          "failed": 1,
+          "checks": [
+            {
+              "check_id": "BR-ANA-01",
+              "description": "All APIs reachable",
+              "status": "FAIL",
+              "details": "holding-folio: 401, insights: 401, analysis: 401",
+              "raw_response": "",
+              "tolerance": ""
+            }
+          ]
+        },
+        {
+          "phase_number": 5,
+          "phase_name": "Negative / Edge Case Tests",
+          "status": "FAIL",
+          "total": 4,
+          "passed": 1,
+          "warnings": 0,
+          "failed": 2,
+          "checks": [
+            {
+              "check_id": "BR-GEN-07",
+              "description": "Missing uniqueIdentifier \u2192 400",
+              "status": "FAIL",
+              "details": "Expected 400, got 401",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-GEN-07",
+              "description": "Empty uniqueIdentifier \u2192 400",
+              "status": "FAIL",
+              "details": "Expected 400, got 401",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-GEN-08",
+              "description": "SQLi input \u2192 400 (no 500)",
+              "status": "PASS",
+              "details": "Expected 4xx, got 401",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-GEN-10",
+              "description": "No Content-Type header \u2192 415",
+              "status": "SKIP",
+              "details": "Header validation requires custom HTTP client",
+              "raw_response": "",
+              "tolerance": ""
+            }
+          ]
+        },
+        {
+          "phase_number": 6,
+          "phase_name": "SLA Performance",
+          "status": "UNAVAILABLE",
+          "total": 1,
+          "passed": 0,
+          "warnings": 0,
+          "failed": 0,
+          "checks": [
+            {
+              "check_id": "SLA-01",
+              "description": "OpenSearch connection",
+              "status": "UNAVAILABLE",
+              "details": "OpenSearch not available or not configured",
+              "raw_response": "",
+              "tolerance": ""
+            }
+          ]
+        },
+        {
+          "phase_number": 7,
+          "phase_name": "Webhook Validation",
+          "status": "UNAVAILABLE",
+          "total": 1,
+          "passed": 0,
+          "warnings": 0,
+          "failed": 0,
+          "checks": [
+            {
+              "check_id": "BR-WH-01",
+              "description": "Webhook events available",
+              "status": "UNAVAILABLE",
+              "details": "OpenSearch not available or not configured",
+              "raw_response": "",
+              "tolerance": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": []
 }
