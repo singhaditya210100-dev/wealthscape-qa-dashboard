@@ -1,40 +1,64 @@
 {
-  "run_id": "af854b58",
+  "run_id": "d53269d9",
   "date": "2026-04-19",
-  "run_started": "2026-04-19T16:24:57.909374",
-  "run_completed": "2026-04-19T16:25:08.969772",
+  "run_started": "2026-04-19T16:33:14.305191",
+  "run_completed": "2026-04-19T16:33:26.616718",
   "overall_status": "FAIL",
-  "total_checks": 30,
-  "passed": 10,
+  "total_checks": 46,
+  "passed": 22,
   "warnings": 0,
-  "failed": 14,
+  "failed": 18,
   "clients": [
     {
       "name": "Dhanprayoga",
       "environment": "UAT",
       "status": "FAIL",
-      "total_checks": 20,
-      "passed": 9,
+      "total_checks": 23,
+      "passed": 11,
       "warnings": 0,
-      "failed": 8,
-      "run_started": "2026-04-19T16:24:57.910887",
-      "run_completed": "2026-04-19T16:25:05.684474",
+      "failed": 9,
+      "run_started": "2026-04-19T16:33:14.306018",
+      "run_completed": "2026-04-19T16:33:18.961820",
       "phases": [
         {
           "phase_number": 1,
           "phase_name": "Holdings & ISIN Validation",
           "status": "FAIL",
-          "total": 1,
-          "passed": 0,
+          "total": 4,
+          "passed": 2,
           "warnings": 0,
-          "failed": 1,
+          "failed": 2,
           "checks": [
             {
               "check_id": "BR-ULA-05",
-              "description": "Holdings API reachable",
+              "description": "currentValue matches reference",
               "status": "FAIL",
-              "details": "API returned 401",
-              "raw_response": "Failed to obtain authentication token",
+              "details": "API: \u20b96661570.04 | Ref: \u20b9472491.01 | Delta: \u20b96189079.03",
+              "raw_response": "",
+              "tolerance": "\u00b1\u20b9100"
+            },
+            {
+              "check_id": "BR-ULA-06",
+              "description": "totalHoldings = 27",
+              "status": "FAIL",
+              "details": "API: 12 | Ref: 27",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-ULA-06",
+              "description": "closingUnits >= 0 for all holdings",
+              "status": "PASS",
+              "details": "Negative units found: 0",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-ULA-06",
+              "description": "nav > 0 for all active holdings",
+              "status": "PASS",
+              "details": "Zero/negative NAV: 0",
+              "raw_response": "",
               "tolerance": ""
             }
           ]
@@ -188,8 +212,8 @@
             {
               "check_id": "BR-GEN-07",
               "description": "Missing uniqueIdentifier \u2192 400",
-              "status": "PASS",
-              "details": "Expected 400, got 400",
+              "status": "FAIL",
+              "details": "Expected 400, got 401",
               "raw_response": "",
               "tolerance": ""
             },
@@ -197,15 +221,15 @@
               "check_id": "BR-GEN-07",
               "description": "Empty uniqueIdentifier \u2192 400",
               "status": "FAIL",
-              "details": "Expected 400, got 406",
+              "details": "Expected 400, got 401",
               "raw_response": "",
               "tolerance": ""
             },
             {
               "check_id": "BR-GEN-08",
               "description": "SQLi input \u2192 400 (no 500)",
-              "status": "FAIL",
-              "details": "Expected 4xx, got 406",
+              "status": "PASS",
+              "details": "Expected 4xx, got 401",
               "raw_response": "",
               "tolerance": ""
             },
@@ -263,28 +287,52 @@
       "name": "Crest",
       "environment": "PROD",
       "status": "FAIL",
-      "total_checks": 10,
-      "passed": 1,
+      "total_checks": 23,
+      "passed": 11,
       "warnings": 0,
-      "failed": 6,
-      "run_started": "2026-04-19T16:25:05.686166",
-      "run_completed": "2026-04-19T16:25:08.969738",
+      "failed": 9,
+      "run_started": "2026-04-19T16:33:18.963523",
+      "run_completed": "2026-04-19T16:33:26.616695",
       "phases": [
         {
           "phase_number": 1,
           "phase_name": "Holdings & ISIN Validation",
           "status": "FAIL",
-          "total": 1,
-          "passed": 0,
+          "total": 4,
+          "passed": 2,
           "warnings": 0,
-          "failed": 1,
+          "failed": 2,
           "checks": [
             {
               "check_id": "BR-ULA-05",
-              "description": "Holdings API reachable",
+              "description": "currentValue matches reference",
               "status": "FAIL",
-              "details": "API returned 401",
-              "raw_response": "Failed to obtain authentication token",
+              "details": "API: \u20b9508602.84 | Ref: \u20b9472491.01 | Delta: \u20b936111.83",
+              "raw_response": "",
+              "tolerance": "\u00b1\u20b9100"
+            },
+            {
+              "check_id": "BR-ULA-06",
+              "description": "totalHoldings = 27",
+              "status": "FAIL",
+              "details": "API: 21 | Ref: 27",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-ULA-06",
+              "description": "closingUnits >= 0 for all holdings",
+              "status": "PASS",
+              "details": "Negative units found: 0",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-ULA-06",
+              "description": "nav > 0 for all active holdings",
+              "status": "PASS",
+              "details": "Zero/negative NAV: 0",
+              "raw_response": "",
               "tolerance": ""
             }
           ]
@@ -293,17 +341,49 @@
           "phase_number": 2,
           "phase_name": "Transactions Check",
           "status": "FAIL",
-          "total": 1,
-          "passed": 0,
+          "total": 5,
+          "passed": 4,
           "warnings": 0,
           "failed": 1,
           "checks": [
             {
-              "check_id": "BR-STMT-01",
-              "description": "Transactions API reachable",
+              "check_id": "BR-STMT-02",
+              "description": "All required fields present",
+              "status": "PASS",
+              "details": "Records with missing fields: 0/30",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-STMT-02",
+              "description": "txnId is unique",
+              "status": "PASS",
+              "details": "Duplicate txnIds: 0",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-STMT-03",
+              "description": "Transaction types are valid",
               "status": "FAIL",
-              "details": "API returned 401",
-              "raw_response": "Failed to obtain authentication token",
+              "details": "Invalid types found: 2 unique types",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-STMT-04",
+              "description": "Amount \u2248 units \u00d7 nav (\u00b1\u20b91)",
+              "status": "PASS",
+              "details": "Records with calculation errors: 0",
+              "raw_response": "",
+              "tolerance": "\u00b1\u20b91"
+            },
+            {
+              "check_id": "BR-STMT-05",
+              "description": "Tax fields valid and sum correctly",
+              "status": "PASS",
+              "details": "Records with tax errors: 0",
+              "raw_response": "",
               "tolerance": ""
             }
           ]
@@ -312,17 +392,49 @@
           "phase_number": 3,
           "phase_name": "Insights & Analysis",
           "status": "FAIL",
-          "total": 1,
-          "passed": 0,
+          "total": 5,
+          "passed": 3,
           "warnings": 0,
-          "failed": 1,
+          "failed": 2,
           "checks": [
             {
               "check_id": "BR-INS-01",
-              "description": "Insights API reachable",
+              "description": "totalHoldings = 27",
+              "status": "PASS",
+              "details": "API: 27 | Expected: 27",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-INS-01",
+              "description": "currentValue matches reference",
               "status": "FAIL",
-              "details": "API returned 401",
-              "raw_response": "Failed to obtain authentication token",
+              "details": "API: \u20b9508602.85 | Ref: \u20b9472491.01 | Delta: \u20b936111.84",
+              "raw_response": "",
+              "tolerance": "\u00b1\u20b9100"
+            },
+            {
+              "check_id": "BR-INS-02",
+              "description": "Return calculations correct",
+              "status": "PASS",
+              "details": "Absolute return delta: \u20b90.00",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-INS-03",
+              "description": "Category distribution sums to current value",
+              "status": "PASS",
+              "details": "Sum: \u20b9508602.85 | Current: \u20b9508602.85 | Delta: \u20b90.00",
+              "raw_response": "",
+              "tolerance": "\u00b1\u20b91"
+            },
+            {
+              "check_id": "BR-ANA-01",
+              "description": "Analysis/Insights currentValue consistent",
+              "status": "FAIL",
+              "details": "Insights: \u20b9508602.85 | Analysis: \u20b9436252.61",
+              "raw_response": "",
               "tolerance": ""
             }
           ]
@@ -331,16 +443,32 @@
           "phase_number": 4,
           "phase_name": "Cross-API Consistency",
           "status": "FAIL",
-          "total": 1,
-          "passed": 0,
+          "total": 3,
+          "passed": 1,
           "warnings": 0,
-          "failed": 1,
+          "failed": 2,
           "checks": [
             {
               "check_id": "BR-ANA-01",
-              "description": "All APIs reachable",
+              "description": "currentValue consistent across 3 APIs",
               "status": "FAIL",
-              "details": "holding-folio: 401, insights: 401, analysis: 401",
+              "details": "Source1: \u20b9508602.84 | Source2: \u20b9508602.85 | Source3: \u20b9436252.61 | Max delta: \u20b972350.24",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-ANA-01",
+              "description": "totalHoldings consistent across 3 APIs",
+              "status": "FAIL",
+              "details": "Source1: 21 | Source2: 27 | Source3: 21",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-ANA-02",
+              "description": "Scheme categories sum to total",
+              "status": "PASS",
+              "details": "Sum: \u20b9436252.61 | Total: \u20b9436252.61",
               "raw_response": "",
               "tolerance": ""
             }
@@ -358,8 +486,8 @@
             {
               "check_id": "BR-GEN-07",
               "description": "Missing uniqueIdentifier \u2192 400",
-              "status": "FAIL",
-              "details": "Expected 400, got 401",
+              "status": "PASS",
+              "details": "Expected 400, got 400",
               "raw_response": "",
               "tolerance": ""
             },
@@ -367,15 +495,15 @@
               "check_id": "BR-GEN-07",
               "description": "Empty uniqueIdentifier \u2192 400",
               "status": "FAIL",
-              "details": "Expected 400, got 401",
+              "details": "Expected 400, got 406",
               "raw_response": "",
               "tolerance": ""
             },
             {
               "check_id": "BR-GEN-08",
               "description": "SQLi input \u2192 400 (no 500)",
-              "status": "PASS",
-              "details": "Expected 4xx, got 401",
+              "status": "FAIL",
+              "details": "Expected 4xx, got 406",
               "raw_response": "",
               "tolerance": ""
             },
