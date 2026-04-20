@@ -1,24 +1,24 @@
 {
-  "run_id": "3e05004d",
+  "run_id": "a0fd7305",
   "date": "2026-04-20",
-  "run_started": "2026-04-20T05:16:42.332172",
-  "run_completed": "2026-04-20T05:16:56.242432",
+  "run_started": "2026-04-20T06:37:11.387137",
+  "run_completed": "2026-04-20T06:37:28.125774",
   "overall_status": "FAIL",
-  "total_checks": 69,
-  "passed": 58,
-  "warnings": 5,
-  "failed": 2,
+  "total_checks": 83,
+  "passed": 67,
+  "warnings": 9,
+  "failed": 3,
   "clients": [
     {
       "name": "Dhanprayoga",
       "environment": "UAT",
       "status": "FAIL",
-      "total_checks": 33,
-      "passed": 29,
-      "warnings": 2,
+      "total_checks": 40,
+      "passed": 34,
+      "warnings": 4,
       "failed": 0,
-      "run_started": "2026-04-20T05:16:42.332967",
-      "run_completed": "2026-04-20T05:16:49.405759",
+      "run_started": "2026-04-20T06:37:11.387828",
+      "run_completed": "2026-04-20T06:37:19.615252",
       "phases": [
         {
           "phase_number": 1,
@@ -133,17 +133,17 @@
         {
           "phase_number": 3,
           "phase_name": "Insights & Analysis",
-          "status": "PASS",
-          "total": 13,
-          "passed": 13,
-          "warnings": 0,
+          "status": "WARN",
+          "total": 20,
+          "passed": 18,
+          "warnings": 2,
           "failed": 0,
           "checks": [
             {
               "check_id": "BR-INS-01",
               "description": "Insights API returns valid structure",
               "status": "PASS",
-              "details": "currentValue: \u20b96,705,966.86 | totalHoldings: 12 | holdingsList: 12",
+              "details": "currentValue: \u20b96,705,966.86 | totalHoldings: 12 | holdings[]: 12",
               "raw_response": "",
               "tolerance": ""
             },
@@ -157,7 +157,7 @@
             },
             {
               "check_id": "BR-INS-01",
-              "description": "Holdings list count matches totalHoldings",
+              "description": "holdings[] count matches totalHoldings",
               "status": "PASS",
               "details": "totalHoldings: 12 | holdings[]: 12",
               "raw_response": "",
@@ -172,10 +172,26 @@
               "tolerance": ""
             },
             {
+              "check_id": "BR-INS-02",
+              "description": "SOA currentValue matches overallSummary",
+              "status": "PASS",
+              "details": "overallSummary: \u20b96,705,966.86 | SOA: \u20b96,705,966.86 | delta: \u20b90.00",
+              "raw_response": "",
+              "tolerance": "\u00b1\u20b9100"
+            },
+            {
+              "check_id": "BR-INS-02",
+              "description": "SOA totalHoldings matches overallSummary",
+              "status": "PASS",
+              "details": "overallSummary: 12 | SOA: 12",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
               "check_id": "BR-INS-03",
               "description": "categoryDistribution sums to currentValue",
               "status": "PASS",
-              "details": "Sum: \u20b96,705,966.85 | currentValue: \u20b96,705,966.86 | delta: \u20b90.01",
+              "details": "sum: \u20b96,705,966.85 | currentValue: \u20b96,705,966.86 | delta: \u20b90.01",
               "raw_response": "",
               "tolerance": "\u00b1\u20b9100"
             },
@@ -183,7 +199,7 @@
               "check_id": "BR-INS-03",
               "description": "categoryDistribution percentages sum to ~100%",
               "status": "PASS",
-              "details": "Sum of percentages: 100.0% (expected ~100%)",
+              "details": "sum: 100.0%",
               "raw_response": "",
               "tolerance": "\u00b11%"
             },
@@ -191,7 +207,7 @@
               "check_id": "BR-INS-03",
               "description": "subCategoryDistribution sums to currentValue",
               "status": "PASS",
-              "details": "Sum: \u20b96,705,966.87 | currentValue: \u20b96,705,966.86 | delta: \u20b90.01",
+              "details": "sum: \u20b96,705,966.87 | currentValue: \u20b96,705,966.86 | delta: \u20b90.01",
               "raw_response": "",
               "tolerance": "\u00b1\u20b9100"
             },
@@ -199,9 +215,41 @@
               "check_id": "BR-INS-03",
               "description": "AMC distribution sums to currentValue",
               "status": "PASS",
-              "details": "Sum: \u20b96,705,966.84 | currentValue: \u20b96,705,966.86 | delta: \u20b90.02",
+              "details": "sum: \u20b96,705,966.84 | currentValue: \u20b96,705,966.86 | delta: \u20b90.02",
               "raw_response": "",
               "tolerance": "\u00b1\u20b9100"
+            },
+            {
+              "check_id": "BR-INS-03",
+              "description": "Market cap distribution percentages sum to ~100%",
+              "status": "PASS",
+              "details": "sum: 100.0%",
+              "raw_response": "",
+              "tolerance": "\u00b11%"
+            },
+            {
+              "check_id": "BR-INS-04",
+              "description": "Per-holding NAV date fresh (within 3 days)",
+              "status": "WARN",
+              "details": "Stale NAV: 12 \u2014 ['INF109K01BL4', 'INF178L01AX4']",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-INS-04",
+              "description": "currentNav > 0 for all active holdings",
+              "status": "PASS",
+              "details": "Zero NAV with active units: 0",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-INS-04",
+              "description": "Per-holding currentValue \u2248 totalUnits \u00d7 currentNav (\u00b1\u20b910)",
+              "status": "WARN",
+              "details": "Mismatches: 2 \u2014 INF179K01756: cv=\u20b9231,150.58 units\u00d7nav=\u20b9231,163.81",
+              "raw_response": "",
+              "tolerance": "\u00b1\u20b910"
             },
             {
               "check_id": "BR-INS-02",
@@ -215,7 +263,7 @@
               "check_id": "BR-ANA-01",
               "description": "Analysis API returns valid structure",
               "status": "PASS",
-              "details": "currentValue: \u20b96,705,966.86 | schemeCategory count: 10",
+              "details": "currentValue: \u20b96,705,966.86 | schemeCategory[]: 10",
               "raw_response": "",
               "tolerance": ""
             },
@@ -231,7 +279,7 @@
               "check_id": "BR-ANA-02",
               "description": "Analysis schemeCategory sums to currentValue",
               "status": "PASS",
-              "details": "schemeCategory sum: \u20b96,705,966.87 | currentValue: \u20b96,705,966.86 | delta: \u20b90.01",
+              "details": "sum: \u20b96,705,966.87 | currentValue: \u20b96,705,966.86 | delta: \u20b90.01",
               "raw_response": "",
               "tolerance": ""
             },
@@ -239,7 +287,15 @@
               "check_id": "BR-ANA-02",
               "description": "Analysis schemeType sums to currentValue",
               "status": "PASS",
-              "details": "schemeType sum: \u20b96,705,966.93 | currentValue: \u20b96,705,966.86 | delta: \u20b90.07",
+              "details": "sum: \u20b96,705,966.93 | currentValue: \u20b96,705,966.86 | delta: \u20b90.07",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-ANA-02",
+              "description": "Analysis totalHoldings > 0",
+              "status": "PASS",
+              "details": "totalHoldings: 12",
               "raw_response": "",
               "tolerance": ""
             }
@@ -367,12 +423,12 @@
       "name": "Crest",
       "environment": "PROD",
       "status": "FAIL",
-      "total_checks": 36,
-      "passed": 29,
-      "warnings": 3,
-      "failed": 2,
-      "run_started": "2026-04-20T05:16:49.406686",
-      "run_completed": "2026-04-20T05:16:56.242395",
+      "total_checks": 43,
+      "passed": 33,
+      "warnings": 5,
+      "failed": 3,
+      "run_started": "2026-04-20T06:37:19.616167",
+      "run_completed": "2026-04-20T06:37:28.125732",
       "phases": [
         {
           "phase_number": 1,
@@ -435,7 +491,7 @@
               "check_id": "BR-REF-03",
               "description": "[PROD] All reference ISINs present in API",
               "status": "FAIL",
-              "details": "Missing from API: 6 \u2014 ['INF0QA701011', 'INF769K01010', 'INF846K01DP8']",
+              "details": "Missing from API: 6 \u2014 ['INF769K01010', 'INF192K01635', 'INF0QA701011']",
               "raw_response": "",
               "tolerance": ""
             },
@@ -511,17 +567,17 @@
         {
           "phase_number": 3,
           "phase_name": "Insights & Analysis",
-          "status": "PASS",
-          "total": 13,
-          "passed": 13,
-          "warnings": 0,
-          "failed": 0,
+          "status": "FAIL",
+          "total": 20,
+          "passed": 17,
+          "warnings": 2,
+          "failed": 1,
           "checks": [
             {
               "check_id": "BR-INS-01",
               "description": "Insights API returns valid structure",
               "status": "PASS",
-              "details": "currentValue: \u20b9508,602.85 | totalHoldings: 27 | holdingsList: 27",
+              "details": "currentValue: \u20b9508,602.85 | totalHoldings: 27 | holdings[]: 27",
               "raw_response": "",
               "tolerance": ""
             },
@@ -535,7 +591,7 @@
             },
             {
               "check_id": "BR-INS-01",
-              "description": "Holdings list count matches totalHoldings",
+              "description": "holdings[] count matches totalHoldings",
               "status": "PASS",
               "details": "totalHoldings: 27 | holdings[]: 27",
               "raw_response": "",
@@ -550,10 +606,26 @@
               "tolerance": ""
             },
             {
+              "check_id": "BR-INS-02",
+              "description": "SOA currentValue matches overallSummary",
+              "status": "FAIL",
+              "details": "overallSummary: \u20b9508,602.85 | SOA: \u20b9352,337.41 | delta: \u20b9156265.44",
+              "raw_response": "",
+              "tolerance": "\u00b1\u20b9100"
+            },
+            {
+              "check_id": "BR-INS-02",
+              "description": "SOA totalHoldings matches overallSummary",
+              "status": "WARN",
+              "details": "overallSummary: 27 | SOA: 19",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
               "check_id": "BR-INS-03",
               "description": "categoryDistribution sums to currentValue",
               "status": "PASS",
-              "details": "Sum: \u20b9508,602.85 | currentValue: \u20b9508,602.85 | delta: \u20b90.00",
+              "details": "sum: \u20b9508,602.85 | currentValue: \u20b9508,602.85 | delta: \u20b90.00",
               "raw_response": "",
               "tolerance": "\u00b1\u20b9100"
             },
@@ -561,7 +633,7 @@
               "check_id": "BR-INS-03",
               "description": "categoryDistribution percentages sum to ~100%",
               "status": "PASS",
-              "details": "Sum of percentages: 100.0% (expected ~100%)",
+              "details": "sum: 100.0%",
               "raw_response": "",
               "tolerance": "\u00b11%"
             },
@@ -569,7 +641,7 @@
               "check_id": "BR-INS-03",
               "description": "subCategoryDistribution sums to currentValue",
               "status": "PASS",
-              "details": "Sum: \u20b9508,602.85 | currentValue: \u20b9508,602.85 | delta: \u20b90.00",
+              "details": "sum: \u20b9508,602.85 | currentValue: \u20b9508,602.85 | delta: \u20b90.00",
               "raw_response": "",
               "tolerance": "\u00b1\u20b9100"
             },
@@ -577,9 +649,41 @@
               "check_id": "BR-INS-03",
               "description": "AMC distribution sums to currentValue",
               "status": "PASS",
-              "details": "Sum: \u20b9508,602.85 | currentValue: \u20b9508,602.85 | delta: \u20b90.00",
+              "details": "sum: \u20b9508,602.85 | currentValue: \u20b9508,602.85 | delta: \u20b90.00",
               "raw_response": "",
               "tolerance": "\u00b1\u20b9100"
+            },
+            {
+              "check_id": "BR-INS-03",
+              "description": "Market cap distribution percentages sum to ~100%",
+              "status": "PASS",
+              "details": "sum: 100.0%",
+              "raw_response": "",
+              "tolerance": "\u00b11%"
+            },
+            {
+              "check_id": "BR-INS-04",
+              "description": "Per-holding NAV date fresh (within 3 days)",
+              "status": "WARN",
+              "details": "Stale NAV: 24 \u2014 ['INF0QA701011', 'INF0QA701094']",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-INS-04",
+              "description": "currentNav > 0 for all active holdings",
+              "status": "PASS",
+              "details": "Zero NAV with active units: 0",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-INS-04",
+              "description": "Per-holding currentValue \u2248 totalUnits \u00d7 currentNav (\u00b1\u20b910)",
+              "status": "PASS",
+              "details": "Mismatches: 0",
+              "raw_response": "",
+              "tolerance": "\u00b1\u20b910"
             },
             {
               "check_id": "BR-INS-02",
@@ -593,7 +697,7 @@
               "check_id": "BR-ANA-01",
               "description": "Analysis API returns valid structure",
               "status": "PASS",
-              "details": "currentValue: \u20b9508,602.85 | schemeCategory count: 10",
+              "details": "currentValue: \u20b9508,602.85 | schemeCategory[]: 10",
               "raw_response": "",
               "tolerance": ""
             },
@@ -609,7 +713,7 @@
               "check_id": "BR-ANA-02",
               "description": "Analysis schemeCategory sums to currentValue",
               "status": "PASS",
-              "details": "schemeCategory sum: \u20b9508,602.85 | currentValue: \u20b9508,602.85 | delta: \u20b90.00",
+              "details": "sum: \u20b9508,602.85 | currentValue: \u20b9508,602.85 | delta: \u20b90.00",
               "raw_response": "",
               "tolerance": ""
             },
@@ -617,7 +721,15 @@
               "check_id": "BR-ANA-02",
               "description": "Analysis schemeType sums to currentValue",
               "status": "PASS",
-              "details": "schemeType sum: \u20b9508,602.84 | currentValue: \u20b9508,602.85 | delta: \u20b90.01",
+              "details": "sum: \u20b9508,602.84 | currentValue: \u20b9508,602.85 | delta: \u20b90.01",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-ANA-02",
+              "description": "Analysis totalHoldings > 0",
+              "status": "PASS",
+              "details": "totalHoldings: 21",
               "raw_response": "",
               "tolerance": ""
             }
