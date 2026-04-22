@@ -9,48 +9,45 @@
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --purple: #6B2FE0; --purple-light: #EDE9FB; --purple-mid: #8B55E8; --purple-dark: #4A1FA3;
+  --purple: #6B2FE0; --purple-light: #EDE9FB; --purple-dark: #4A1FA3;
   --green: #12B76A; --green-light: #ECFDF5;
   --red: #F04438; --red-light: #FEF3F2; --red-mid: #FDA29B;
   --amber: #F79009; --amber-light: #FFFAEB;
-  --blue: #1570EF; --blue-light: #EFF8FF;
   --gray-50: #F9FAFB; --gray-100: #F2F4F7; --gray-200: #EAECF0; --gray-300: #D0D5DD;
   --gray-400: #98A2B3; --gray-500: #667085; --gray-700: #344054; --gray-900: #101828;
   --white: #FFFFFF;
   --shadow-sm: 0 1px 2px rgba(16,24,40,0.05);
-  --shadow: 0 1px 3px rgba(16,24,40,0.1), 0 1px 2px rgba(16,24,40,0.06);
   --shadow-md: 0 4px 8px -2px rgba(16,24,40,0.1), 0 2px 4px -2px rgba(16,24,40,0.06);
   --shadow-lg: 0 12px 16px -4px rgba(16,24,40,0.08), 0 4px 6px -2px rgba(16,24,40,0.03);
   --radius: 12px; --radius-sm: 8px;
 }
-
 body { font-family: 'Inter', sans-serif; background: var(--gray-50); color: var(--gray-900); min-height: 100vh; display: flex; }
 
 .sidebar { width: 240px; min-height: 100vh; background: var(--white); border-right: 1px solid var(--gray-200); display: flex; flex-direction: column; flex-shrink: 0; position: fixed; top: 0; left: 0; bottom: 0; }
 .sidebar-logo { padding: 20px 20px 16px; border-bottom: 1px solid var(--gray-200); display: flex; align-items: center; gap: 10px; }
 .logo-icon { width: 32px; height: 32px; background: var(--purple); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .logo-icon svg { width: 18px; height: 18px; fill: white; }
-.logo-text { font-size: 16px; font-weight: 700; color: var(--gray-900); }
+.logo-text { font-size: 16px; font-weight: 700; }
 .sidebar-nav { padding: 12px; flex: 1; }
-.nav-label { font-size: 11px; font-weight: 600; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.6px; padding: 0 8px; margin-bottom: 4px; margin-top: 16px; }
-.nav-item { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: var(--radius-sm); font-size: 14px; font-weight: 500; color: var(--gray-700); cursor: pointer; transition: all 0.15s; margin-bottom: 2px; text-decoration: none; }
+.nav-label { font-size: 11px; font-weight: 600; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.6px; padding: 0 8px; margin: 16px 0 4px; }
+.nav-item { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: var(--radius-sm); font-size: 14px; font-weight: 500; color: var(--gray-700); cursor: pointer; transition: all 0.15s; margin-bottom: 2px; }
 .nav-item:hover { background: var(--gray-100); }
 .nav-item.active { background: var(--purple-light); color: var(--purple); }
 .nav-item.active svg { stroke: var(--purple); }
 .nav-item svg { width: 18px; height: 18px; stroke: var(--gray-500); stroke-width: 1.8; fill: none; flex-shrink: 0; }
 .sidebar-footer { padding: 16px; border-top: 1px solid var(--gray-200); font-size: 12px; color: var(--gray-400); text-align: center; }
 
-.main { margin-left: 240px; flex: 1; min-height: 100vh; display: flex; flex-direction: column; }
+.main { margin-left: 240px; flex: 1; display: flex; flex-direction: column; min-height: 100vh; }
 .topbar { background: var(--white); border-bottom: 1px solid var(--gray-200); padding: 0 28px; height: 64px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; }
-.topbar-title { font-size: 18px; font-weight: 600; color: var(--gray-900); }
+.topbar-title { font-size: 18px; font-weight: 600; }
 .topbar-right { display: flex; align-items: center; gap: 12px; }
 .next-run-badge { background: var(--purple-light); color: var(--purple); font-size: 12px; font-weight: 500; padding: 6px 12px; border-radius: 20px; display: flex; align-items: center; gap: 6px; }
-.next-run-badge .dot { width: 6px; height: 6px; background: var(--purple); border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
-@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+.dot { width: 6px; height: 6px; background: var(--purple); border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.4} }
 .last-updated { font-size: 12px; color: var(--gray-500); }
-.refresh-btn { width: 34px; height: 34px; border: 1px solid var(--gray-200); border-radius: var(--radius-sm); background: var(--white); cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--gray-500); transition: all 0.15s; }
+.refresh-btn { width: 34px; height: 34px; border: 1px solid var(--gray-200); border-radius: var(--radius-sm); background: var(--white); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; }
 .refresh-btn:hover { background: var(--gray-100); }
-.refresh-btn svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 2; fill: none; }
+.refresh-btn svg { width: 16px; height: 16px; stroke: var(--gray-500); stroke-width: 2; fill: none; }
 
 .content { padding: 24px 28px; flex: 1; }
 
@@ -60,198 +57,112 @@ body { font-family: 'Inter', sans-serif; background: var(--gray-50); color: var(
 .status-banner.WARN { background: var(--amber-light); border-color: #FEC84B; }
 .status-banner.UNAVAILABLE { background: var(--gray-100); border-color: var(--gray-300); }
 .banner-left { display: flex; align-items: center; gap: 14px; }
-.banner-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
-.PASS .banner-icon { background: #DCFCE7; } .FAIL .banner-icon { background: #FEE2E2; } .WARN .banner-icon { background: #FEF3C7; }
-.banner-title { font-size: 16px; font-weight: 700; color: var(--gray-900); }
+.banner-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+.PASS .banner-icon{background:#DCFCE7} .FAIL .banner-icon{background:#FEE2E2} .WARN .banner-icon{background:#FEF3C7}
+.banner-title { font-size: 16px; font-weight: 700; }
 .banner-sub { font-size: 12px; color: var(--gray-500); margin-top: 2px; }
 .banner-stats { display: flex; gap: 24px; flex-wrap: wrap; }
-.banner-stat { text-align: center; }
-.banner-stat .val { font-size: 20px; font-weight: 700; display: block; line-height: 1.2; }
-.banner-stat .val.pass { color: var(--green); } .banner-stat .val.fail { color: var(--red); } .banner-stat .val.warn { color: var(--amber); } .banner-stat .val.neutral { color: var(--gray-900); } .banner-stat .val.purple { color: var(--purple); }
-.banner-stat .lbl { font-size: 11px; color: var(--gray-500); margin-top: 2px; }
+.bstat { text-align: center; }
+.bstat .val { font-size: 20px; font-weight: 700; display: block; }
+.bstat .val.pass{color:var(--green)} .bstat .val.fail{color:var(--red)} .bstat .val.warn{color:var(--amber)} .bstat .val.n{color:var(--gray-900)} .bstat .val.p{color:var(--purple)}
+.bstat .lbl { font-size: 11px; color: var(--gray-500); }
 
-.section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.section-hdr { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
 .section-title { font-size: 14px; font-weight: 600; color: var(--gray-700); display: flex; align-items: center; gap: 8px; }
 
 .clients-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(540px, 1fr)); gap: 16px; margin-bottom: 24px; }
 .client-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); transition: box-shadow 0.2s; }
 .client-card:hover { box-shadow: var(--shadow-md); }
-.card-header { padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--gray-100); }
-.card-title-wrap { display: flex; align-items: center; gap: 8px; }
-.card-title { font-size: 15px; font-weight: 600; color: var(--gray-900); }
-.env-badge { font-size: 10px; font-weight: 600; letter-spacing: 0.5px; padding: 2px 8px; border-radius: 20px; text-transform: uppercase; }
+.card-hdr { padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--gray-100); }
+.card-title { font-size: 15px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+.env-badge { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 20px; text-transform: uppercase; }
 .env-badge.UAT { background: #EFF8FF; color: #1570EF; border: 1px solid #B2DDFF; }
 .env-badge.PROD { background: var(--amber-light); color: #B54708; border: 1px solid #FEC84B; }
-.status-badge { font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 20px; letter-spacing: 0.3px; }
-.status-badge.PASS { background: var(--green-light); color: #027A48; border: 1px solid #A9EFC5; }
-.status-badge.FAIL { background: var(--red-light); color: #B42318; border: 1px solid #FECDCA; }
-.status-badge.WARN { background: var(--amber-light); color: #B54708; border: 1px solid #FEC84B; }
-.status-badge.SKIP, .status-badge.UNAVAILABLE { background: var(--gray-100); color: var(--gray-500); border: 1px solid var(--gray-200); }
+.sbadge { font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 20px; }
+.sbadge.PASS{background:var(--green-light);color:#027A48;border:1px solid #A9EFC5}
+.sbadge.FAIL{background:var(--red-light);color:#B42318;border:1px solid #FECDCA}
+.sbadge.WARN{background:var(--amber-light);color:#B54708;border:1px solid #FEC84B}
+.sbadge.SKIP,.sbadge.UNAVAILABLE{background:var(--gray-100);color:var(--gray-500);border:1px solid var(--gray-200)}
 
 .card-stats { display: flex; border-bottom: 1px solid var(--gray-100); }
 .stat-cell { flex: 1; padding: 12px 0; text-align: center; border-right: 1px solid var(--gray-100); }
 .stat-cell:last-child { border-right: none; }
-.stat-cell .num { font-size: 18px; font-weight: 700; display: block; line-height: 1.2; }
-.stat-cell .num.pass { color: var(--green); } .stat-cell .num.fail { color: var(--red); } .stat-cell .num.warn { color: var(--amber); } .stat-cell .num.total { color: var(--gray-900); } .stat-cell .num.purple { color: var(--purple); }
-.stat-cell .lbl { font-size: 10px; color: var(--gray-500); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
+.stat-cell .num { font-size: 18px; font-weight: 700; display: block; }
+.stat-cell .num.pass{color:var(--green)} .stat-cell .num.fail{color:var(--red)} .stat-cell .num.warn{color:var(--amber)} .stat-cell .num.tot{color:var(--gray-900)} .stat-cell .num.pur{color:var(--purple)}
+.stat-cell .lbl { font-size: 10px; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.5px; }
 
 .pass-bar-wrap { padding: 8px 20px; border-bottom: 1px solid var(--gray-100); display: flex; align-items: center; gap: 10px; }
 .pass-bar { flex: 1; height: 5px; background: var(--gray-100); border-radius: 4px; overflow: hidden; }
-.pass-bar-fill { height: 100%; border-radius: 4px; transition: width 0.6s ease; }
-.pass-bar-fill.PASS { background: var(--green); } .pass-bar-fill.WARN { background: var(--amber); } .pass-bar-fill.FAIL { background: var(--red); }
-.pass-bar-label { font-size: 11px; color: var(--gray-500); white-space: nowrap; }
+.pbf { height: 100%; border-radius: 4px; transition: width 0.6s; }
+.pbf.PASS{background:var(--green)} .pbf.WARN{background:var(--amber)} .pbf.FAIL{background:var(--red)}
+.pass-bar-lbl { font-size: 11px; color: var(--gray-500); white-space: nowrap; }
 
 .phase-row { display: flex; align-items: center; gap: 12px; padding: 10px 20px; cursor: pointer; transition: background 0.12s; border-bottom: 1px solid var(--gray-50); }
 .phase-row:hover { background: var(--gray-50); }
-.phase-row:last-child { border-bottom: none; }
-.phase-num { width: 24px; height: 24px; border-radius: 6px; background: var(--gray-100); display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: var(--gray-500); flex-shrink: 0; }
-.phase-num.PASS { background: var(--green-light); color: #027A48; } .phase-num.FAIL { background: var(--red-light); color: #B42318; } .phase-num.WARN { background: var(--amber-light); color: #B54708; }
+.pnum { width: 24px; height: 24px; border-radius: 6px; background: var(--gray-100); display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: var(--gray-500); flex-shrink: 0; }
+.pnum.PASS{background:var(--green-light);color:#027A48} .pnum.FAIL{background:var(--red-light);color:#B42318} .pnum.WARN{background:var(--amber-light);color:#B54708}
 .phase-name { flex: 1; font-size: 13px; font-weight: 500; color: var(--gray-700); }
-.phase-progress { width: 100px; height: 4px; background: var(--gray-100); border-radius: 3px; overflow: hidden; flex-shrink: 0; }
-.phase-progress-fill { height: 100%; border-radius: 3px; }
-.phase-progress-fill.PASS { background: var(--green); } .phase-progress-fill.FAIL { background: var(--red); } .phase-progress-fill.WARN { background: var(--amber); }
-.phase-count { font-size: 11px; color: var(--gray-500); width: 40px; text-align: right; flex-shrink: 0; }
-.phase-chevron { color: var(--gray-400); flex-shrink: 0; transition: transform 0.2s; }
-.phase-chevron.open { transform: rotate(90deg); }
+.phase-prog { width: 100px; height: 4px; background: var(--gray-100); border-radius: 3px; overflow: hidden; flex-shrink: 0; }
+.ppf { height: 100%; border-radius: 3px; }
+.ppf.PASS{background:var(--green)} .ppf.FAIL{background:var(--red)} .ppf.WARN{background:var(--amber)}
+.phase-cnt { font-size: 11px; color: var(--gray-500); width: 40px; text-align: right; flex-shrink: 0; }
+.chevron { color: var(--gray-400); flex-shrink: 0; transition: transform 0.2s; }
+.chevron.open { transform: rotate(90deg); }
 
 .checks-list { display: none; background: var(--gray-50); border-top: 1px solid var(--gray-100); }
 .checks-list.open { display: block; }
 
-/* ── Check Item ── */
 .check-item { border-bottom: 1px solid var(--gray-100); }
 .check-item:last-child { border-bottom: none; }
-
 .check-main { display: flex; gap: 10px; padding: 10px 20px 10px 56px; align-items: flex-start; }
-.check-dot { width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; flex-shrink: 0; margin-top: 1px; font-weight: 700; }
-.check-dot.PASS { background: var(--green-light); color: #027A48; }
-.check-dot.FAIL { background: var(--red-light); color: #B42318; }
-.check-dot.WARN { background: var(--amber-light); color: #B54708; }
-.check-dot.SKIP, .check-dot.UNAVAILABLE { background: var(--gray-100); color: var(--gray-500); }
-.check-body { flex: 1; min-width: 0; }
-.check-id { font-size: 10px; font-weight: 600; color: var(--purple); margin-bottom: 1px; }
-.check-desc { font-size: 12px; color: var(--gray-700); font-weight: 500; }
-.check-detail { font-size: 11px; color: var(--gray-500); margin-top: 2px; }
+.cdot { width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+.cdot.PASS{background:var(--green-light);color:#027A48} .cdot.FAIL{background:var(--red-light);color:#B42318} .cdot.WARN{background:var(--amber-light);color:#B54708} .cdot.SKIP,.cdot.UNAVAILABLE{background:var(--gray-100);color:var(--gray-500)}
+.cbody { flex: 1; min-width: 0; }
+.cid { font-size: 10px; font-weight: 600; color: var(--purple); margin-bottom: 1px; }
+.cdesc { font-size: 12px; color: var(--gray-700); font-weight: 500; }
+.cdetail { font-size: 11px; color: var(--gray-500); margin-top: 2px; }
 
-/* ── CTAs ── */
 .check-ctas { display: flex; gap: 6px; padding: 0 20px 10px 84px; flex-wrap: wrap; }
+.cta { font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 6px; cursor: pointer; border: 1px solid; transition: all 0.15s; display: inline-flex; align-items: center; gap: 4px; background: none; font-family: inherit; }
+.cta-d { color: #B42318; border-color: var(--red-mid); background: var(--red-light); }
+.cta-d:hover { background: #FEE2E2; }
+.cta-t { color: var(--purple); border-color: #C4B5FD; background: var(--purple-light); }
+.cta-t:hover { background: #DDD6FE; }
+.cta-c { color: var(--gray-700); border-color: var(--gray-300); background: var(--white); }
+.cta-c:hover { background: var(--gray-100); }
+.cta-ok { color: #027A48; border-color: #A9EFC5; background: var(--green-light); }
 
-.cta-btn {
-  font-size: 11px; font-weight: 600; padding: 4px 10px;
-  border-radius: 6px; cursor: pointer; border: 1px solid;
-  transition: all 0.15s; display: inline-flex; align-items: center; gap: 4px;
-  background: none;
-}
+/* Detail panel */
+.detail-panel { display: none; margin: 0 20px 10px 84px; background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-sm); }
+.detail-panel.open { display: block; }
+.dp-hdr { padding: 10px 14px; background: #FEF3F2; border-bottom: 1px solid #FECDCA; display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; color: #B42318; }
+.dp-body { padding: 12px 14px; display: flex; flex-direction: column; gap: 10px; }
+.dp-sec .dp-lbl { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: var(--gray-400); margin-bottom: 4px; }
+.dp-sec .dp-val { font-size: 12px; color: var(--gray-700); line-height: 1.5; }
+.dp-sec .dp-val.mono { font-family: 'SF Mono','Fira Code',monospace; font-size: 11px; background: var(--gray-50); padding: 6px 8px; border-radius: 4px; border: 1px solid var(--gray-200); word-break: break-all; }
+.dp-exact { background: #FEF3F2; border: 1px solid #FECDCA; border-radius: 6px; padding: 8px 10px; }
+.dp-exact .dp-lbl { color: #B42318; }
+.dp-exact .dp-val { font-family: 'SF Mono','Fira Code',monospace; font-size: 11px; color: #B42318; font-weight: 600; word-break: break-all; }
 
-.cta-details { color: var(--red); border-color: var(--red-mid); background: var(--red-light); }
-.cta-details:hover { background: #FEE2E2; }
-.cta-ticket { color: var(--purple); border-color: #C4B5FD; background: var(--purple-light); }
-.cta-ticket:hover { background: #DDD6FE; }
-.cta-copy { color: var(--gray-700); border-color: var(--gray-300); background: var(--white); }
-.cta-copy:hover { background: var(--gray-100); }
-.cta-copied { color: var(--green); border-color: #A9EFC5; background: var(--green-light); }
-
-/* ── Detail Panel ── */
-.check-detail-panel {
-  display: none;
-  margin: 0 20px 10px 84px;
-  background: var(--white);
-  border: 1px solid var(--gray-200);
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-}
-
-.check-detail-panel.open { display: block; }
-
-.detail-panel-header {
-  padding: 10px 14px;
-  background: #FEF3F2;
-  border-bottom: 1px solid #FECDCA;
-  display: flex; align-items: center; gap: 8px;
-  font-size: 12px; font-weight: 600; color: #B42318;
-}
-
-.detail-panel-body { padding: 12px 14px; }
-
-.detail-section { margin-bottom: 12px; }
-.detail-section:last-child { margin-bottom: 0; }
-.detail-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: var(--gray-400); margin-bottom: 4px; }
-.detail-value { font-size: 12px; color: var(--gray-700); line-height: 1.5; }
-.detail-value.mono { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 11px; background: var(--gray-50); padding: 6px 8px; border-radius: 4px; border: 1px solid var(--gray-200); word-break: break-all; }
-
-/* ── Ticket Panel ── */
-.ticket-panel {
-  display: none;
-  margin: 0 20px 10px 84px;
-  background: var(--white);
-  border: 1px solid #C4B5FD;
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-}
-
+/* Ticket panel */
+.ticket-panel { display: none; margin: 0 20px 10px 84px; background: var(--white); border: 1px solid #C4B5FD; border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-sm); }
 .ticket-panel.open { display: block; }
-
-.ticket-panel-header {
-  padding: 10px 14px;
-  background: var(--purple-light);
-  border-bottom: 1px solid #C4B5FD;
-  display: flex; align-items: center; justify-content: space-between;
-  font-size: 12px; font-weight: 600; color: var(--purple);
-}
-
-.ticket-panel-body { padding: 12px 14px; display: flex; flex-direction: column; gap: 10px; }
-
-.ticket-field { }
-.ticket-field-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: var(--gray-400); margin-bottom: 3px; }
-.ticket-field-value {
-  font-size: 12px; color: var(--gray-700); line-height: 1.5;
-  background: var(--gray-50); padding: 8px 10px;
-  border-radius: 6px; border: 1px solid var(--gray-200);
-  white-space: pre-wrap; word-break: break-word;
-}
-
-.ticket-actions { display: flex; gap: 6px; padding-top: 4px; }
+.tp-hdr { padding: 10px 14px; background: var(--purple-light); border-bottom: 1px solid #C4B5FD; display: flex; align-items: center; justify-content: space-between; font-size: 12px; font-weight: 600; color: var(--purple); }
+.tp-body { padding: 12px 14px; display: flex; flex-direction: column; gap: 10px; }
+.tf-lbl { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: var(--gray-400); margin-bottom: 3px; }
+.tf-val { font-size: 12px; color: var(--gray-700); background: var(--gray-50); padding: 8px 10px; border-radius: 6px; border: 1px solid var(--gray-200); white-space: pre-wrap; word-break: break-word; line-height: 1.5; }
+.tf-val.mono { font-family: 'SF Mono','Fira Code',monospace; font-size: 11px; }
+.tp-actions { display: flex; gap: 6px; padding-top: 2px; }
 
 .loading { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 20px; gap: 16px; }
 .spinner { width: 28px; height: 28px; border: 2px solid var(--gray-200); border-top-color: var(--purple); border-radius: 50%; animation: spin 0.7s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
-.loading-text { font-size: 13px; color: var(--gray-500); }
-.error-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 40px; text-align: center; }
+.err-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 40px; text-align: center; }
 
-/* ── Modal backdrop ── */
-.modal-backdrop {
-  display: none; position: fixed; inset: 0;
-  background: rgba(0,0,0,0.4); z-index: 200;
-  align-items: center; justify-content: center;
-}
-.modal-backdrop.open { display: flex; }
-.modal {
-  background: var(--white); border-radius: var(--radius);
-  width: 560px; max-width: 95vw; max-height: 90vh;
-  overflow-y: auto; box-shadow: var(--shadow-lg);
-}
-.modal-header {
-  padding: 20px 24px 16px;
-  border-bottom: 1px solid var(--gray-200);
-  display: flex; align-items: center; justify-content: space-between;
-}
-.modal-title { font-size: 16px; font-weight: 700; color: var(--gray-900); }
-.modal-close { cursor: pointer; color: var(--gray-400); font-size: 20px; line-height: 1; border: none; background: none; padding: 2px 6px; border-radius: 4px; }
-.modal-close:hover { background: var(--gray-100); }
-.modal-body { padding: 20px 24px; }
-.modal-footer { padding: 16px 24px; border-top: 1px solid var(--gray-200); display: flex; justify-content: flex-end; gap: 8px; }
-.btn { padding: 8px 16px; border-radius: var(--radius-sm); font-size: 13px; font-weight: 600; cursor: pointer; border: 1px solid; transition: all 0.15s; }
-.btn-primary { background: var(--purple); color: white; border-color: var(--purple); }
-.btn-primary:hover { background: var(--purple-dark); }
-.btn-secondary { background: var(--white); color: var(--gray-700); border-color: var(--gray-300); }
-.btn-secondary:hover { background: var(--gray-50); }
-
-@media (max-width: 900px) { .sidebar { display: none; } .main { margin-left: 0; } .clients-grid { grid-template-columns: 1fr; } }
+@media(max-width:900px){.sidebar{display:none}.main{margin-left:0}.clients-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-
 <aside class="sidebar">
   <div class="sidebar-logo">
     <div class="logo-icon"><svg viewBox="0 0 20 20"><path d="M10 2L3 7v11h5v-5h4v5h5V7L10 2z"/></svg></div>
@@ -259,19 +170,16 @@ body { font-family: 'Inter', sans-serif; background: var(--gray-50); color: var(
   </div>
   <nav class="sidebar-nav">
     <div class="nav-label">QA Agent</div>
-    <a class="nav-item active">
-      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
-      Dashboard
-    </a>
-    <a class="nav-item" onclick="loadReport()">
-      <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z" stroke-dasharray="4"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
-      Latest Report
-    </a>
+    <div class="nav-item active">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Dashboard
+    </div>
+    <div class="nav-item" onclick="loadReport()">
+      <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z" stroke-dasharray="4"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>Latest Report
+    </div>
     <div class="nav-label">Schedule</div>
-    <a class="nav-item">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-      Daily 07:00 IST
-    </a>
+    <div class="nav-item">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Daily 07:00 IST
+    </div>
   </nav>
   <div class="sidebar-footer">WealthScape MF Sanity Agent</div>
 </aside>
@@ -281,315 +189,246 @@ body { font-family: 'Inter', sans-serif; background: var(--gray-50); color: var(
     <div class="topbar-title">API Sanity Dashboard</div>
     <div class="topbar-right">
       <div class="last-updated" id="last-updated">Loading...</div>
-      <div class="next-run-badge">
-        <span class="dot"></span>
-        Next run: <strong id="countdown">--:--:--</strong>
-      </div>
-      <button class="refresh-btn" onclick="loadReport()" title="Refresh">
-        <svg viewBox="0 0 24 24"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
-      </button>
+      <div class="next-run-badge"><span class="dot"></span>Next run: <strong id="countdown">--:--:--</strong></div>
+      <button class="refresh-btn" onclick="loadReport()"><svg viewBox="0 0 24 24"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg></button>
     </div>
   </header>
-  <div class="content">
-    <div id="main-content">
-      <div class="loading"><div class="spinner"></div><div class="loading-text">Fetching latest report...</div></div>
-    </div>
-  </div>
-</div>
-
-<!-- Ticket Modal -->
-<div class="modal-backdrop" id="ticket-modal">
-  <div class="modal">
-    <div class="modal-header">
-      <div class="modal-title">🎫 Jira Ticket Content</div>
-      <button class="modal-close" onclick="closeModal()">×</button>
-    </div>
-    <div class="modal-body" id="modal-body"></div>
-    <div class="modal-footer">
-      <button class="btn btn-secondary" onclick="closeModal()">Close</button>
-      <button class="btn btn-primary" onclick="copyModalContent()">Copy All</button>
-    </div>
-  </div>
+  <div class="content"><div id="main-content"><div class="loading"><div class="spinner"></div><div style="font-size:13px;color:var(--gray-500)">Fetching latest report...</div></div></div></div>
 </div>
 
 <script>
-const STATUS_ICON = { PASS: '✓', FAIL: '✕', WARN: '!', SKIP: '–', UNAVAILABLE: '?' };
+const SI = { PASS:'✓', FAIL:'✕', WARN:'!', SKIP:'–', UNAVAILABLE:'?' };
+let _reportDate = '';
 
-// ── Explain a failure in plain English ──
-function explainFailure(check, clientName, environment) {
-  const id = check.check_id;
-  const desc = check.description;
+// ── Description-based failure explainer with exact data values ──
+function explainFailure(check) {
+  const desc = check.description || '';
   const details = check.details || '';
 
-  const explanations = {
-    'BR-ULA-05': {
-      what: 'The Holdings & Folio API (`/mutual-fund/user-linked-accounts/holding-folio`) failed to return a valid response.',
-      why: 'This could mean the API server is down, the authentication token expired mid-session, or the user account has no linked folios.',
-      impact: 'All downstream checks that depend on holdings data (currentValue, units, NAV) are blocked.',
-      action: 'Check API server health for the ' + environment + ' environment. Verify the QA user (9819582869) has active consents.',
-    },
-    'BR-ULA-06': {
-      what: 'One or more holdings in the API response have data integrity issues — either negative closing units, zero NAV, or an empty holdings list.',
-      why: 'Negative units suggest a data processing bug in the reconciliation pipeline. Zero NAV on an active holding means the NAV feed failed to update.',
-      impact: 'Portfolio valuation will be incorrect. Any return calculations based on this data will be wrong.',
-      action: 'Investigate the ETL pipeline for the affected ISINs. Check if the NAV feed from AMFI/registrar is working.',
-    },
-    'BR-REF-03': {
-      what: 'NAV dates are older than 3 days, or the API response does not match the expected reference ISIN list.',
-      why: 'Stale NAV indicates the data fetch job has not run recently. Missing ISINs suggest consents may have expired or FIP data is unavailable.',
-      impact: 'Portfolio value shown to users is outdated and inaccurate.',
-      action: 'Check the AA consent status for the QA user. Verify FIP data fetch jobs are running on schedule.',
-    },
-    'BR-STMT-01': {
-      what: 'The Account Statement API (`/mutual-fund/user-account-statement`) returned an error or empty response.',
-      why: 'The endpoint may be unavailable, or the date range query returned no data.',
-      impact: 'Transaction history is unavailable. Users cannot view their buy/sell history.',
-      action: 'Test the endpoint directly with the QA credentials. Check if the date range parameter is being accepted.',
-    },
-    'BR-STMT-02': {
-      what: 'Transaction records are missing required fields or contain duplicate transaction IDs.',
-      why: 'Missing fields indicate incomplete data from the registrar/FIP. Duplicate txnIds suggest a deduplication bug in the processing pipeline.',
-      impact: 'Transaction records may appear corrupt or doubled to users.',
-      action: 'Review the transaction ingestion pipeline. Check for deduplication logic in the ETL layer.',
-    },
-    'BR-STMT-03': {
-      what: 'Transactions contain unrecognised type values not in the standard enum.',
-      why: 'The registrar may have introduced a new transaction type that the system has not mapped.',
-      impact: 'These transactions may not render correctly in the UI.',
-      action: 'Review the new transaction type values and add them to the type mapping configuration.',
-    },
-    'BR-INS-01': {
-      what: 'The Insights API (`/mutual-fund/insights`) returned an invalid structure or the `overallSummary` block is missing.',
-      why: 'A breaking change in the API response schema, or the data aggregation service failed for this user.',
-      impact: 'Portfolio summary screen will be blank or show incorrect data.',
-      action: 'Check the insights aggregation service logs for the affected user ID.',
-    },
-    'BR-INS-02': {
-      what: '`absoluteReturn` does not equal `currentValue − investedValue`, or the SOA data is inconsistent with the overall summary.',
-      why: 'A calculation bug in the return computation service, or the SOA and main summary are pulling from different data snapshots.',
-      impact: 'Return percentages shown to users will be incorrect.',
-      action: 'Review the return calculation logic in the insights service. Check if SOA and summary queries are using the same data snapshot.',
-    },
-    'BR-INS-03': {
-      what: 'Category, sub-category, or AMC distribution values do not sum to the total portfolio value.',
-      why: 'A rounding error or a fund is being counted in multiple categories, or excluded from distribution calculations.',
-      impact: 'The allocation chart shown to users will not add up to 100%.',
-      action: 'Check the category mapping for each fund in the system. Look for funds with null or unmapped categories.',
-    },
-    'BR-INS-04': {
-      what: 'Per-fund NAV data is stale, zero, or the computed value (units × NAV) does not match the reported currentValue.',
-      why: 'The NAV feed for specific funds is delayed or errored. The valuation engine may not be recalculating after NAV updates.',
-      impact: 'Individual fund valuations shown to users are inaccurate.',
-      action: 'Check the NAV update job for the specific ISINs. Verify the valuation engine triggers after NAV ingestion.',
-    },
-    'BR-ANA-01': {
-      what: 'The Analysis API (`/mutual-fund/analysis`) returned data inconsistent with the Insights API.',
-      why: 'The two APIs may be reading from different database tables or cached at different times.',
-      impact: 'Users may see different portfolio values on different screens.',
-      action: 'Ensure both APIs read from the same data source and cache is invalidated consistently.',
-    },
-    'BR-ANA-02': {
-      what: 'Scheme category or scheme type breakdowns in the Analysis API do not sum to the total portfolio value.',
-      why: 'Same root cause as distribution mismatch — funds with null scheme categories or a rounding aggregation bug.',
-      impact: 'Category allocation charts in the Analysis screen will be incorrect.',
-      action: 'Review scheme category mapping. Check for null/unmapped schemeCategory values in the fund master data.',
-    },
-    'BR-AUTH-01': {
-      what: 'The API accepted an invalid/expired token instead of rejecting it with a 401.',
-      why: 'The JWT validation middleware may not be correctly verifying token signatures or expiry.',
-      impact: 'Critical security vulnerability — unauthorised access to user data possible.',
-      action: 'Immediately audit the authentication middleware. Verify JWT signature validation and expiry checks are enforced.',
-    },
-    'BR-GEN-07': {
-      what: 'The API did not return a 4xx error when the `uniqueIdentifier` field was missing or empty.',
-      why: 'Input validation is not enforced before processing the request.',
-      impact: 'Malformed requests may cause unpredictable behaviour or expose system errors.',
-      action: 'Add request validation to reject missing/empty `uniqueIdentifier` before processing.',
-    },
-    'BR-GEN-08': {
-      what: 'A SQL injection payload in `uniqueIdentifier` did not return a safe 4xx error.',
-      why: 'Input sanitisation may be insufficient, or the API is returning a 500 on injection attempts.',
-      impact: 'Potential SQL injection vulnerability.',
-      action: 'Review input sanitisation. Ensure parameterised queries are used throughout. Never return 500 on invalid input.',
-    },
-    'BR-GEN-10': {
-      what: 'An unknown `uniqueIdentifier` returned unexpected data or a 500 error.',
-      why: 'The API is not handling non-existent user lookups gracefully.',
-      impact: 'Could expose internal error details. Should return empty data or 404.',
-      action: 'Add a check for non-existent identifiers and return an empty result set or 404 instead of erroring.',
-    },
+  function pv() {  // parse details key:value -> readable list
+    return details.split('|').map(p => {
+      const [k,...v] = p.split(':');
+      return k && v.length ? `<strong>${k.trim()}:</strong> ${v.join(':').trim()}` : p.trim();
+    }).filter(Boolean).join(' &nbsp;·&nbsp; ');
+  }
+
+  const D = { // shorthand
+    exact: details || 'No details captured',
+    pv: pv(),
   };
 
-  const found = explanations[id];
-  if (found) return found;
+  if (desc.includes('Holdings API reachable') || desc.includes('Transactions API reachable') || desc.includes('Insights API reachable') || desc.includes('Analysis API reachable'))
+    return { what:`The API failed to return HTTP 200.`, exact:D.exact, why:`Server may be down, auth token expired mid-session, or the user has no data in this environment.`, impact:`All downstream checks for this phase are blocked.`, action:`Check API server health. Verify QA user (9819582869) has active consents in this environment.` };
+
+  if (desc.includes('currentValue > 0'))
+    return { what:`Portfolio currentValue is zero or negative.`, exact:D.pv, why:`No active holdings with non-zero values, or the valuation engine failed.`, impact:`Portfolio appears empty to users despite active investments.`, action:`Check the valuation job for this user. Verify holdings have non-zero closingUnits and valid NAV.` };
+
+  if (desc.includes('Holdings list non-empty'))
+    return { what:`The API returned an empty holdings array.`, exact:D.pv, why:`User may have no linked accounts, or FIP data fetch failed.`, impact:`No individual fund data is available — portfolio screen will be blank.`, action:`Verify QA user has active linked accounts and consents. Review FIP data fetch logs.` };
+
+  if (desc.includes('closingUnits >= 0'))
+    return { what:`One or more holdings have negative closing units.`, exact:D.exact, why:`A redemption was processed without a corresponding purchase, or the units reconciliation has a bug.`, impact:`Negative units cause incorrect portfolio valuation and may crash downstream calculations.`, action:`Identify ISINs with negative units from the details. Review the transaction reconciliation pipeline for those accounts.` };
+
+  if (desc.includes('nav > 0') || desc.includes('currentNav > 0'))
+    return { what:`Active holdings (with units > 0) have a NAV of zero or negative.`, exact:D.exact, why:`NAV feed from AMFI or the registrar failed to update for these specific funds.`, impact:`These funds show ₹0 value despite the user holding units, making the portfolio total wrong.`, action:`Identify the affected ISINs from the details. Check the NAV ingestion job for those funds.` };
+
+  if (desc.includes('NAV date not stale') || desc.includes('NAV date fresh') || desc.includes('within 3 days'))
+    return { what:`Holdings have NAV dates older than 3 days.`, exact:D.exact, why:`The daily NAV fetch job has not run for these ISINs, or the FIP is not providing updated data.`, impact:`Portfolio values shown to users are stale and inaccurate.`, action:`Check the scheduled NAV update job. Verify connectivity to the NAV data source for the specific ISINs listed above.` };
+
+  if (desc.includes('[PROD] All reference ISINs'))
+    return { what:`ISINs from the reference portfolio are missing from the API response.`, exact:D.exact, why:`AA consents may have expired for the FIPs holding these funds, or the data fetch failed.`, impact:`The QA reference portfolio is incomplete — some funds are invisible in the API.`, action:`Check AA consent status for the missing ISINs listed above. Re-trigger data fetch for those FIPs.` };
+
+  if (desc.includes('[PROD] Per-ISIN closingUnits'))
+    return { what:`Closing units in the API differ from the reference snapshot.`, exact:D.exact, why:`New transactions since the snapshot, or a unit reconciliation error.`, impact:`Unit counts are inconsistent with expected reference values.`, action:`Check if recent transactions explain the delta shown above. If no recent activity, investigate the reconciliation pipeline.` };
+
+  if (desc.includes('[PROD] currentValue within'))
+    return { what:`Live portfolio value deviates more than 20% from the reference snapshot.`, exact:D.pv, why:`Large NAV movements, new investments/redemptions since snapshot, or a valuation error.`, impact:`Large unexplained deviation may indicate a data quality issue beyond normal market movement.`, action:`Review recent transactions and NAV changes. If no market explanation exists, investigate the valuation engine.` };
+
+  if (desc.includes('Required fields present'))
+    return { what:`Transaction records are missing required fields (isin, amc, nav, type, or amount).`, exact:D.pv, why:`Incomplete data from the registrar or a parsing error in the ingestion pipeline.`, impact:`Incomplete transactions may not display correctly and could cause UI errors.`, action:`Identify the specific records using the count above. Review the data ingestion pipeline for the relevant registrar.` };
+
+  if (desc.includes('txnId unique'))
+    return { what:`Multiple transactions share the same txnId — duplicates detected.`, exact:D.pv, why:`Deduplication bug in the transaction processing pipeline, or the same transaction was ingested multiple times.`, impact:`Users will see doubled transactions in their statement.`, action:`Review the deduplication logic in the transaction ingestion service. Audit why ${details.match(/Duplicates: (\d+)/)?.[1] || 'some'} records share IDs.` };
+
+  if (desc.includes('Transaction types'))
+    return { what:`Transaction records contain unrecognised type values.`, exact:D.exact, why:`A new transaction type was introduced by the registrar that hasn't been added to the type mapping.`, impact:`These transactions won't be categorised correctly in the UI.`, action:`Add the unknown type values to the transaction type enum configuration.` };
+
+  if (desc.includes('Amount ≈') || desc.includes('Amount approx'))
+    return { what:`Transaction amount does not match units × NAV.`, exact:D.pv, why:`Stamp duty or tax may be included in the amount field, or a data error in units/NAV.`, impact:`Transaction amount accuracy cannot be verified.`, action:`Check if charges are embedded in the amount. Review the calculation tolerance in the config.` };
+
+  if (desc.includes('Insights API returns valid structure'))
+    return { what:`The Insights API response is missing the overallSummary or holdings blocks.`, exact:D.exact, why:`The aggregation service may have failed for this user, or a breaking schema change was deployed.`, impact:`Portfolio summary screen will be blank or show partial data.`, action:`Check the insights aggregation service logs for user 9819582869. Compare the live response schema against the API spec.` };
+
+  if (desc.includes('holdings[] count') || desc.includes('holdings list count'))
+    return { what:`The holdings[] array length doesn't match the totalHoldings field.`, exact:D.pv, why:`totalHoldings is a pre-computed count field that may be out of sync with the actual holdings list.`, impact:`Holding count mismatch causes confusion in the UI.`, action:`Verify the totalHoldings field is computed from the same query that populates the holdings[] array.` };
+
+  if (desc.includes('absoluteReturn = currentValue') && !desc.includes('Per-holding'))
+    return { what:`Portfolio-level absoluteReturn ≠ currentValue − investedValue.`, exact:D.pv, why:`Return calculation service is using a different formula or reading a stale investedValue.`, impact:`The overall return % shown to users is wrong.`, action:`Review the return calculation logic. Check if investedValue is read from the correct source and is current.` };
+
+  if (desc.includes('Per-holding absoluteReturn'))
+    return { what:`Individual fund holdings have incorrect absoluteReturn values.`, exact:D.exact, why:`Per-fund return calculation doesn't match currentValue − investedValue for those funds.`, impact:`Individual fund return percentages are inaccurate.`, action:`Review how investedValue is tracked for funds with zero investedValue (common for SOA-only funds).` };
+
+  if (desc.includes('SOA') && desc.includes('currentValue'))
+    return { what:`SOA + Demat sub-total currentValue doesn't match the overallSummary currentValue.`, exact:D.pv, why:`SOA and Demat aggregations are reading from a different data snapshot than the main summary.`, impact:`Internal data inconsistency within a single API response — numbers don't add up.`, action:`Ensure SOA and Demat aggregations use the same data snapshot timestamp as the overallSummary calculation.` };
+
+  if (desc.includes('SOA') && desc.includes('totalHoldings'))
+    return { what:`SOA + Demat totalHoldings doesn't match the overallSummary totalHoldings.`, exact:D.pv, why:`Holdings are counted differently between the SOA view and the main summary.`, impact:`Inconsistent holding counts within the same API response.`, action:`Review how SOA vs overall holdings are counted. Check for filtering differences (e.g. zero-unit holdings).` };
+
+  if (desc.includes('categoryDistribution sums'))
+    return { what:`Sum of category values (Equity + Debt + Hybrid) ≠ total portfolio currentValue.`, exact:D.pv, why:`A fund is either uncategorised (null category) or being counted in multiple categories.`, impact:`The allocation pie chart won't sum to 100%.`, action:`Find funds with null or unmapped category values. Check for double-counting in the aggregation query.` };
+
+  if (desc.includes('categoryDistribution percentages'))
+    return { what:`Category distribution percentages don't sum to ~100%.`, exact:D.exact, why:`Rounding errors in percentage calculation, or a fund is excluded from the distribution.`, impact:`The allocation chart percentages will appear incorrect to users.`, action:`Review the percentage rounding logic. Ensure all funds are included in the distribution calculation.` };
+
+  if (desc.includes('subCategoryDistribution'))
+    return { what:`Sub-category distribution total ≠ portfolio currentValue.`, exact:D.pv, why:`A fund is missing a sub-category mapping and is excluded from the distribution.`, impact:`Sub-category breakdown chart is incomplete or inaccurate.`, action:`Identify funds with null subCategory in the fund master data. Add the missing mappings.` };
+
+  if (desc.includes('AMC distribution'))
+    return { what:`AMC-wise value sum ≠ total portfolio currentValue.`, exact:D.pv, why:`A fund is missing an AMC mapping or is assigned to an AMC not in the distribution list.`, impact:`AMC allocation breakdown chart is inaccurate.`, action:`Check for funds with null amcName. Verify the AMC distribution aggregation query.` };
+
+  if (desc.includes('Market cap distribution'))
+    return { what:`Market cap distribution percentages (Large/Mid/Small) don't sum to ~100%.`, exact:D.exact, why:`Some funds may not have market cap data, or the percentage rounding is off.`, impact:`Market cap allocation view is inaccurate.`, action:`Check for funds without market cap classification. Review the percentage calculation logic.` };
+
+  if (desc.includes('Per-holding NAV date'))
+    return { what:`Specific fund holdings have NAV dates older than 3 days.`, exact:D.exact, why:`The NAV update job has not processed these specific ISINs recently.`, impact:`These specific fund valuations are stale and inaccurate.`, action:`Check the NAV ingestion pipeline specifically for the ISINs listed above.` };
+
+  if (desc.includes('currentValue ≈ totalUnits'))
+    return { what:`Reported currentValue doesn't match totalUnits × currentNav for some holdings.`, exact:D.exact, why:`The valuation engine may not have recalculated after the last NAV update.`, impact:`Individual fund values shown to users are inconsistent with NAV × units math.`, action:`Trigger a recalculation of holding values. Verify the valuation engine runs after each NAV update.` };
+
+  if (desc.includes('Analysis currentValue consistent'))
+    return { what:`Analysis API currentValue differs from Insights API currentValue.`, exact:D.pv, why:`Both APIs may read from different database replicas or use different cache layers.`, impact:`Users see different portfolio totals on different screens.`, action:`Ensure both APIs read from the same data source and invalidate caches consistently.` };
+
+  if (desc.includes('All 3 APIs reachable') || desc.includes('consistent across 3 APIs'))
+    return { what:`Portfolio values or holding counts differ across the three API endpoints.`, exact:D.pv, why:`APIs read from different data replicas or aggregate data differently.`, impact:`Users see different portfolio totals depending on which screen they're on.`, action:`Standardise the data source for all three endpoints. Ensure cache invalidation is consistent after data updates.` };
+
+  if (desc.includes('schemeCategory sums'))
+    return { what:`Scheme category breakdown values don't sum to the Analysis API currentValue.`, exact:D.pv, why:`A fund has a null or unmapped schemeCategory in the fund master data.`, impact:`Category breakdown chart in the Analysis screen is incomplete.`, action:`Find funds with null schemeCategory. Update fund master data with correct scheme categories.` };
+
+  if (desc.includes('schemeType sums'))
+    return { what:`Scheme type breakdown (Equity/Debt/Hybrid/Other) doesn't sum to Analysis currentValue.`, exact:D.pv, why:`A fund has a null or unmapped schemeType value.`, impact:`Scheme type allocation view is incomplete or inaccurate.`, action:`Identify funds with missing schemeType. Update the fund master mappings.` };
+
+  if (desc.includes('Invalid token') || desc.includes('BR-AUTH-01'))
+    return { what:`The API accepted an invalid token instead of returning 401.`, exact:`Expected: HTTP 401 | Got: ${details}`, why:`JWT signature validation or expiry check is not enforced in the auth middleware.`, impact:`🚨 Critical security vulnerability — unauthorised users may access account data.`, action:`Immediately audit the authentication middleware. Enforce JWT signature and expiry validation on every request.` };
+
+  if (desc.includes('Missing') && desc.includes('uniqueIdentifier'))
+    return { what:`API didn't return 4xx when uniqueIdentifier was missing or empty.`, exact:`Expected: HTTP 400/401 | Got: ${details}`, why:`Input validation is not rejecting malformed requests before processing.`, impact:`Malformed requests reach the processing layer and may cause unpredictable behaviour.`, action:`Add request validation to require a non-empty uniqueIdentifier before processing.` };
+
+  if (desc.includes('SQLi') || desc.includes('injection'))
+    return { what:`SQL injection payload did not receive a safe 4xx error.`, exact:`Expected: HTTP 4xx | Got: ${details}`, why:`Input is not being sanitised, or the API returns 500 on injection attempts.`, impact:`🚨 Potential SQL injection vulnerability.`, action:`Use parameterised queries throughout. Sanitise all inputs. Never expose 500 errors to clients on bad input.` };
+
+  if (desc.includes('Unknown identifier') || desc.includes('no data leak'))
+    return { what:`A random uniqueIdentifier returned unexpected data or a 500 error.`, exact:D.exact, why:`The API is not handling non-existent user lookups gracefully.`, impact:`Could expose internal error details or stack traces to clients.`, action:`Return an empty result or 404 for non-existent identifiers. Never return 500 on user-controlled input errors.` };
 
   // fallback
-  return {
-    what: `Check "${desc}" failed with result: ${details}`,
-    why: 'The API response did not meet the expected validation criteria.',
-    impact: 'Data quality for this check is compromised.',
-    action: 'Review the API response and compare against expected values in the check details.',
-  };
+  return { what:`Check "${desc}" failed validation.`, exact:D.exact, why:`The API response did not meet the expected criteria.`, impact:`Data quality for this metric is compromised.`, action:`Review the observed value above and compare against the check definition.` };
 }
 
-// ── Generate JIRA ticket content ──
-function generateTicket(check, clientName, environment, runDate) {
-  const exp = explainFailure(check, clientName, environment);
-  const severity = check.status === 'FAIL' ? 'High' : 'Medium';
+function generateTicket(check, clientName, environment) {
+  const exp = explainFailure(check);
+  const sev = check.status === 'FAIL' ? 'High' : 'Medium';
   const summary = `[${environment}][${check.check_id}] ${check.description} — ${clientName}`;
-
   const description =
 `*Environment:* ${clientName} / ${environment}
 *Check ID:* ${check.check_id}
-*Run Date:* ${runDate}
-*Severity:* ${severity}
+*Run Date:* ${_reportDate}
+*Severity:* ${sev}
 
 h2. What failed
 ${exp.what}
 
-h2. Observed result
-${check.details || 'No details available'}
+h2. Exact failing data
+${check.details || 'No details captured'}
 
-h2. Why this happens
+h2. Root cause
 ${exp.why}
 
-h2. Impact
+h2. User impact
 ${exp.impact}
 
 h2. Suggested action
 ${exp.action}
 
-h2. Reference
-Detected by WealthScape MF API Sanity Agent (daily run at 07:00 IST).
+----
+Detected by WealthScape MF API Sanity Agent (daily 07:00 IST)
 Dashboard: https://singhaditya210100-dev.github.io/wealthscape-qa-dashboard`;
-
-  return { summary, description, severity };
+  return { summary, description, sev };
 }
 
-function formatDate(iso) {
-  if (!iso) return '—';
-  return new Date(iso).toLocaleString('en-IN', {
-    day: '2-digit', month: 'short', year: 'numeric',
-    hour: '2-digit', minute: '2-digit', hour12: true,
-    timeZone: 'Asia/Kolkata'
-  }) + ' IST';
-}
-
-function formatDuration(s, e) {
-  if (!s || !e) return '—';
-  const sec = Math.round((new Date(e) - new Date(s)) / 1000);
-  return sec < 60 ? `${sec}s` : `${Math.floor(sec/60)}m ${sec%60}s`;
-}
-
-let _reportDate = '';
+function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function escAttr(s){ return (s||'').replace(/'/g,"\\'").replace(/"/g,'&quot;'); }
 
 function renderCheck(check, clientName, environment) {
-  const isFail = check.status === 'FAIL';
-  const isWarn = check.status === 'WARN';
-  const uid = `${clientName}-${environment}-${check.check_id}-${Math.random().toString(36).slice(2,7)}`;
+  const isBad = check.status === 'FAIL' || check.status === 'WARN';
+  const uid = `${clientName.replace(/\s/g,'')}-${environment}-${Math.random().toString(36).slice(2,6)}`;
 
-  const ctasHtml = (isFail || isWarn) ? `
-    <div class="check-ctas">
-      <button class="cta-btn cta-details" onclick="toggleDetailPanel('detail-${uid}', 'ticket-${uid}')">
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-        View Details
-      </button>
-      <button class="cta-btn cta-ticket" onclick="toggleTicketPanel('ticket-${uid}', 'detail-${uid}', '${escStr(check.check_id)}', '${escStr(check.description)}', '${escStr(check.details||'')}', '${escStr(clientName)}', '${escStr(environment)}')">
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V9l-4-4z"/><path d="M15 5v4h4M9 12h6M9 16h4"/></svg>
-        Create Ticket
-      </button>
-    </div>
-    <div class="check-detail-panel" id="detail-${uid}">
-      ${renderDetailPanel(check, clientName, environment)}
-    </div>
-    <div class="ticket-panel" id="ticket-${uid}"></div>` : '';
+  let ctasHtml = '';
+  if (isBad) {
+    const exp = explainFailure(check);
+    ctasHtml = `
+      <div class="check-ctas">
+        <button class="cta cta-d" onclick="togglePanel('dp-${uid}','tp-${uid}')">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+          View Details
+        </button>
+        <button class="cta cta-t" onclick="openTicket('tp-${uid}','dp-${uid}','${escAttr(check.check_id)}','${escAttr(check.description)}','${escAttr(check.details||'')}','${escAttr(clientName)}','${escAttr(environment)}')">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V9l-4-4z"/><path d="M15 5v4h4M9 12h6M9 16h4"/></svg>
+          Create Ticket
+        </button>
+      </div>
+      <div class="detail-panel" id="dp-${uid}">
+        <div class="dp-hdr"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>Failure Analysis — ${esc(check.check_id)}</div>
+        <div class="dp-body">
+          <div class="dp-sec"><div class="dp-lbl">What failed</div><div class="dp-val">${exp.what}</div></div>
+          <div class="dp-sec dp-exact"><div class="dp-lbl">Exact failing value</div><div class="dp-val">${esc(exp.exact)}</div></div>
+          <div class="dp-sec"><div class="dp-lbl">Why this happens</div><div class="dp-val">${exp.why}</div></div>
+          <div class="dp-sec"><div class="dp-lbl">User impact</div><div class="dp-val">${exp.impact}</div></div>
+          <div class="dp-sec"><div class="dp-lbl">Suggested action</div><div class="dp-val">${exp.action}</div></div>
+        </div>
+      </div>
+      <div class="ticket-panel" id="tp-${uid}"></div>`;
+  }
 
   return `
     <div class="check-item">
       <div class="check-main">
-        <div class="check-dot ${check.status}">${STATUS_ICON[check.status] || '?'}</div>
-        <div class="check-body">
-          <div class="check-id">${check.check_id}</div>
-          <div class="check-desc">${check.description}</div>
-          ${check.details ? `<div class="check-detail">${check.details}${check.tolerance ? ` &nbsp;·&nbsp; Tolerance: ${check.tolerance}` : ''}</div>` : ''}
+        <div class="cdot ${check.status}">${SI[check.status]||'?'}</div>
+        <div class="cbody">
+          <div class="cid">${esc(check.check_id)}</div>
+          <div class="cdesc">${esc(check.description)}</div>
+          ${check.details ? `<div class="cdetail">${esc(check.details)}${check.tolerance ? ` &nbsp;·&nbsp; Tolerance: ${esc(check.tolerance)}` : ''}</div>` : ''}
         </div>
       </div>
       ${ctasHtml}
     </div>`;
 }
 
-function renderDetailPanel(check, clientName, environment) {
-  const exp = explainFailure(check, clientName, environment);
-  return `
-    <div class="detail-panel-header">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-      Failure Analysis — ${check.check_id}
-    </div>
-    <div class="detail-panel-body">
-      <div class="detail-section">
-        <div class="detail-label">What failed</div>
-        <div class="detail-value">${exp.what}</div>
-      </div>
-      <div class="detail-section">
-        <div class="detail-label">Observed result</div>
-        <div class="detail-value mono">${check.details || 'No details available'}</div>
-      </div>
-      <div class="detail-section">
-        <div class="detail-label">Why this happens</div>
-        <div class="detail-value">${exp.why}</div>
-      </div>
-      <div class="detail-section">
-        <div class="detail-label">Impact</div>
-        <div class="detail-value">${exp.impact}</div>
-      </div>
-      <div class="detail-section">
-        <div class="detail-label">Suggested action</div>
-        <div class="detail-value">${exp.action}</div>
-      </div>
-    </div>`;
-}
-
-function escStr(s) { return (s||'').replace(/'/g, "\\'").replace(/"/g, '&quot;'); }
-
-function toggleDetailPanel(detailId, ticketId) {
-  const dp = document.getElementById(detailId);
-  const tp = document.getElementById(ticketId);
+function togglePanel(dpId, tpId) {
+  const dp = document.getElementById(dpId), tp = document.getElementById(tpId);
   if (!dp) return;
-  const isOpen = dp.classList.contains('open');
+  const opening = !dp.classList.contains('open');
   dp.classList.toggle('open');
-  if (!isOpen && tp) tp.classList.remove('open');
+  if (opening && tp) tp.classList.remove('open');
 }
 
-function toggleTicketPanel(ticketId, detailId, checkId, desc, details, clientName, environment) {
-  const tp = document.getElementById(ticketId);
-  const dp = document.getElementById(detailId);
+function openTicket(tpId, dpId, checkId, desc, details, clientName, environment) {
+  const tp = document.getElementById(tpId), dp = document.getElementById(dpId);
   if (!tp) return;
   const isOpen = tp.classList.contains('open');
   if (!isOpen) {
-    // Build ticket content
     const check = { check_id: checkId, description: desc, details: details };
-    const ticket = generateTicket(check, clientName, environment, _reportDate);
+    const t = generateTicket(check, clientName, environment);
     tp.innerHTML = `
-      <div class="ticket-panel-header">
+      <div class="tp-hdr">
         <span>🎫 Jira Ticket Draft</span>
-        <span style="font-size:10px;font-weight:500;opacity:0.7">${clientName} / ${environment}</span>
+        <span style="font-size:10px;opacity:.7">${clientName} / ${environment}</span>
       </div>
-      <div class="ticket-panel-body">
-        <div class="ticket-field">
-          <div class="ticket-field-label">Summary</div>
-          <div class="ticket-field-value" id="ts-${ticketId}">${ticket.summary}</div>
-        </div>
-        <div class="ticket-field">
-          <div class="ticket-field-label">Priority</div>
-          <div class="ticket-field-value">${ticket.severity}</div>
-        </div>
-        <div class="ticket-field">
-          <div class="ticket-field-label">Description (Jira markup)</div>
-          <div class="ticket-field-value" id="td-${ticketId}" style="font-family:monospace;font-size:11px">${ticket.description}</div>
-        </div>
-        <div class="ticket-actions">
-          <button class="cta-btn cta-copy" id="copy-sum-${ticketId}" onclick="copyField('ts-${ticketId}', 'copy-sum-${ticketId}')">Copy Summary</button>
-          <button class="cta-btn cta-copy" id="copy-desc-${ticketId}" onclick="copyField('td-${ticketId}', 'copy-desc-${ticketId}')">Copy Description</button>
+      <div class="tp-body">
+        <div><div class="tf-lbl">Summary</div><div class="tf-val" id="ts-${tpId}">${esc(t.summary)}</div></div>
+        <div><div class="tf-lbl">Priority</div><div class="tf-val">${t.sev}</div></div>
+        <div><div class="tf-lbl">Description (Jira markup)</div><div class="tf-val mono" id="td-${tpId}">${esc(t.description)}</div></div>
+        <div class="tp-actions">
+          <button class="cta cta-c" id="cs-${tpId}" onclick="copyEl('ts-${tpId}','cs-${tpId}')">Copy Summary</button>
+          <button class="cta cta-c" id="cd-${tpId}" onclick="copyEl('td-${tpId}','cd-${tpId}')">Copy Description</button>
         </div>
       </div>`;
     if (dp) dp.classList.remove('open');
@@ -597,142 +436,109 @@ function toggleTicketPanel(ticketId, detailId, checkId, desc, details, clientNam
   tp.classList.toggle('open');
 }
 
-function copyField(elId, btnId) {
-  const el = document.getElementById(elId);
-  const btn = document.getElementById(btnId);
-  if (!el || !btn) return;
+function copyEl(elId, btnId) {
+  const el = document.getElementById(elId), btn = document.getElementById(btnId);
+  if (!el||!btn) return;
   navigator.clipboard.writeText(el.innerText).then(() => {
-    const orig = btn.textContent;
-    btn.textContent = '✓ Copied!';
-    btn.classList.add('cta-copied');
-    btn.classList.remove('cta-copy');
-    setTimeout(() => {
-      btn.textContent = orig;
-      btn.classList.remove('cta-copied');
-      btn.classList.add('cta-copy');
-    }, 2000);
+    const orig = btn.innerHTML;
+    btn.innerHTML = '✓ Copied!'; btn.classList.replace('cta-c','cta-ok');
+    setTimeout(() => { btn.innerHTML = orig; btn.classList.replace('cta-ok','cta-c'); }, 2000);
   });
 }
 
-function closeModal() { document.getElementById('ticket-modal').classList.remove('open'); }
-function copyModalContent() {
-  const body = document.getElementById('modal-body');
-  navigator.clipboard.writeText(body.innerText);
+function formatDate(iso) {
+  if (!iso) return '—';
+  return new Date(iso).toLocaleString('en-IN',{day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',hour12:true,timeZone:'Asia/Kolkata'})+' IST';
 }
+function dur(s,e){ if(!s||!e)return'—'; const sec=Math.round((new Date(e)-new Date(s))/1000); return sec<60?`${sec}s`:`${Math.floor(sec/60)}m ${sec%60}s`; }
 
-function renderPhase(phase, phaseIdx, clientIdx, clientName, environment) {
-  const id = `checks-${clientIdx}-${phaseIdx}`;
-  const pct = phase.total > 0 ? phase.passed / phase.total * 100 : 0;
-  const checksHtml = phase.checks.map(c => renderCheck(c, clientName, environment)).join('');
+function renderPhase(phase, pi, ci, cn, env) {
+  const id=`cl-${ci}-${pi}`, pct=phase.total>0?phase.passed/phase.total*100:0;
+  const checks = phase.checks.map(c=>renderCheck(c,cn,env)).join('');
   return `
-    <div class="phase-row" onclick="toggleChecks('${id}', this)">
-      <div class="phase-num ${phase.status}">P${phase.phase_number}</div>
-      <span class="phase-name">${phase.phase_name}</span>
-      <div class="phase-progress"><div class="phase-progress-fill ${phase.status}" style="width:${pct}%"></div></div>
-      <span class="phase-count">${phase.passed}/${phase.total}</span>
-      <svg class="phase-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+    <div class="phase-row" onclick="toggleChecks('${id}',this)">
+      <div class="pnum ${phase.status}">P${phase.phase_number}</div>
+      <span class="phase-name">${esc(phase.phase_name)}</span>
+      <div class="phase-prog"><div class="ppf ${phase.status}" style="width:${pct}%"></div></div>
+      <span class="phase-cnt">${phase.passed}/${phase.total}</span>
+      <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
     </div>
-    <div class="checks-list" id="${id}">
-      ${checksHtml || '<div style="padding:10px 56px;font-size:12px;color:#667085">No checks recorded</div>'}
-    </div>`;
+    <div class="checks-list" id="${id}">${checks||'<div style="padding:10px 56px;font-size:12px;color:#667085">No checks recorded</div>'}</div>`;
 }
 
-function renderClient(client, idx) {
-  const passRate = client.total_checks > 0 ? Math.round(client.passed / client.total_checks * 100) : 0;
-  const duration = formatDuration(client.run_started, client.run_completed);
-  const barStatus = client.failed > 0 ? 'FAIL' : client.warnings > 0 ? 'WARN' : 'PASS';
-  const phasesHtml = client.phases.map((p, i) => renderPhase(p, i, idx, client.name, client.environment)).join('');
+function renderClient(c, i) {
+  const pr=c.total_checks>0?Math.round(c.passed/c.total_checks*100):0;
+  const bs=c.failed>0?'FAIL':c.warnings>0?'WARN':'PASS';
   return `
     <div class="client-card">
-      <div class="card-header">
-        <div class="card-title-wrap">
-          <span class="card-title">${client.name}</span>
-          <span class="env-badge ${client.environment}">${client.environment}</span>
-        </div>
-        <span class="status-badge ${client.status}">${client.status}</span>
+      <div class="card-hdr">
+        <div class="card-title">${esc(c.name)}<span class="env-badge ${c.environment}">${c.environment}</span></div>
+        <span class="sbadge ${c.status}">${c.status}</span>
       </div>
       <div class="card-stats">
-        <div class="stat-cell"><span class="num total">${client.total_checks}</span><span class="lbl">Checks</span></div>
-        <div class="stat-cell"><span class="num pass">${client.passed}</span><span class="lbl">Passed</span></div>
-        <div class="stat-cell"><span class="num warn">${client.warnings}</span><span class="lbl">Warnings</span></div>
-        <div class="stat-cell"><span class="num fail">${client.failed}</span><span class="lbl">Failed</span></div>
-        <div class="stat-cell"><span class="num purple">${passRate}%</span><span class="lbl">Pass Rate</span></div>
-        <div class="stat-cell"><span class="num total" style="font-size:14px">${duration}</span><span class="lbl">Duration</span></div>
+        <div class="stat-cell"><span class="num tot">${c.total_checks}</span><span class="lbl">Checks</span></div>
+        <div class="stat-cell"><span class="num pass">${c.passed}</span><span class="lbl">Passed</span></div>
+        <div class="stat-cell"><span class="num warn">${c.warnings}</span><span class="lbl">Warnings</span></div>
+        <div class="stat-cell"><span class="num fail">${c.failed}</span><span class="lbl">Failed</span></div>
+        <div class="stat-cell"><span class="num pur">${pr}%</span><span class="lbl">Pass Rate</span></div>
+        <div class="stat-cell"><span class="num tot" style="font-size:14px">${dur(c.run_started,c.run_completed)}</span><span class="lbl">Duration</span></div>
       </div>
-      <div class="pass-bar-wrap">
-        <div class="pass-bar"><div class="pass-bar-fill ${barStatus}" style="width:${passRate}%"></div></div>
-        <span class="pass-bar-label">${client.passed} of ${client.total_checks} checks passed</span>
-      </div>
-      <div class="phases-list">${phasesHtml}</div>
+      <div class="pass-bar-wrap"><div class="pass-bar"><div class="pbf ${bs}" style="width:${pr}%"></div></div><span class="pass-bar-lbl">${c.passed} of ${c.total_checks} passed</span></div>
+      <div class="phases-list">${c.phases.map((p,pi)=>renderPhase(p,pi,i,c.name,c.environment)).join('')}</div>
     </div>`;
 }
 
 function renderDashboard(data) {
   _reportDate = formatDate(data.run_started);
-  const overallStatus = data.overall_status || 'UNAVAILABLE';
-  const passRate = data.total_checks > 0 ? Math.round(data.passed / data.total_checks * 100) : 0;
-  const icon = { PASS: '✓', FAIL: '✕', WARN: '!', UNAVAILABLE: '?' }[overallStatus] || '?';
-  const title = { PASS: 'All Checks Passed', FAIL: 'Failures Detected', WARN: 'Warnings Found', UNAVAILABLE: 'No Data' }[overallStatus] || overallStatus;
-  document.getElementById('last-updated').textContent = `Last run: ${_reportDate}`;
+  const s=data.overall_status||'UNAVAILABLE';
+  const pr=data.total_checks>0?Math.round(data.passed/data.total_checks*100):0;
+  const icon={PASS:'✓',FAIL:'✕',WARN:'!',UNAVAILABLE:'?'}[s]||'?';
+  const title={PASS:'All Checks Passed',FAIL:'Failures Detected',WARN:'Warnings Found',UNAVAILABLE:'No Data'}[s]||s;
+  document.getElementById('last-updated').textContent=`Last run: ${_reportDate}`;
   return `
-    <div class="status-banner ${overallStatus}">
-      <div class="banner-left">
-        <div class="banner-icon">${icon}</div>
-        <div>
-          <div class="banner-title">${title}</div>
-          <div class="banner-sub">Run ${data.run_id || '—'} &nbsp;·&nbsp; ${_reportDate} &nbsp;·&nbsp; ${formatDuration(data.run_started, data.run_completed)}</div>
-        </div>
+    <div class="status-banner ${s}">
+      <div class="banner-left"><div class="banner-icon">${icon}</div>
+        <div><div class="banner-title">${title}</div><div class="banner-sub">Run ${data.run_id||'—'} &nbsp;·&nbsp; ${_reportDate} &nbsp;·&nbsp; ${dur(data.run_started,data.run_completed)}</div></div>
       </div>
       <div class="banner-stats">
-        <div class="banner-stat"><span class="val neutral">${data.total_checks||0}</span><span class="lbl">Total</span></div>
-        <div class="banner-stat"><span class="val pass">${data.passed||0}</span><span class="lbl">Passed</span></div>
-        <div class="banner-stat"><span class="val warn">${data.warnings||0}</span><span class="lbl">Warnings</span></div>
-        <div class="banner-stat"><span class="val fail">${data.failed||0}</span><span class="lbl">Failed</span></div>
-        <div class="banner-stat"><span class="val purple">${passRate}%</span><span class="lbl">Pass Rate</span></div>
+        <div class="bstat"><span class="val n">${data.total_checks||0}</span><span class="lbl">Total</span></div>
+        <div class="bstat"><span class="val pass">${data.passed||0}</span><span class="lbl">Passed</span></div>
+        <div class="bstat"><span class="val warn">${data.warnings||0}</span><span class="lbl">Warnings</span></div>
+        <div class="bstat"><span class="val fail">${data.failed||0}</span><span class="lbl">Failed</span></div>
+        <div class="bstat"><span class="val p">${pr}%</span><span class="lbl">Pass Rate</span></div>
       </div>
     </div>
-    <div class="section-header">
-      <div class="section-title">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#344054" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
-        Environment Results
-      </div>
+    <div class="section-hdr">
+      <div class="section-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#344054" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Environment Results</div>
       <span style="font-size:12px;color:#667085">${(data.clients||[]).length} environment${(data.clients||[]).length!==1?'s':''} tested</span>
     </div>
     <div class="clients-grid">${(data.clients||[]).map(renderClient).join('')}</div>`;
 }
 
-function toggleChecks(id, row) {
+function toggleChecks(id,row){
   document.getElementById(id)?.classList.toggle('open');
-  row.querySelector('.phase-chevron')?.classList.toggle('open');
+  row.querySelector('.chevron')?.classList.toggle('open');
 }
 
-function updateCountdown() {
-  const ist = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
-  const next = new Date(ist); next.setHours(7,0,0,0);
-  if (ist >= next) next.setDate(next.getDate()+1);
-  const d = next - ist;
-  const h = Math.floor(d/3600000), m = Math.floor((d%3600000)/60000), s = Math.floor((d%60000)/1000);
-  document.getElementById('countdown').textContent = `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+function updateCountdown(){
+  const ist=new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Kolkata'}));
+  const next=new Date(ist); next.setHours(7,0,0,0);
+  if(ist>=next) next.setDate(next.getDate()+1);
+  const d=next-ist,h=Math.floor(d/3600000),m=Math.floor((d%3600000)/60000),s=Math.floor((d%60000)/1000);
+  document.getElementById('countdown').textContent=`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
 }
-setInterval(updateCountdown, 1000); updateCountdown();
+setInterval(updateCountdown,1000); updateCountdown();
 
-async function loadReport() {
+async function loadReport(){
   try {
-    const res = await fetch('reports/latest_report.json?t=' + Date.now());
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const data = await res.json();
-    document.getElementById('main-content').innerHTML = renderDashboard(data);
-  } catch (err) {
-    document.getElementById('main-content').innerHTML = `
-      <div class="error-card">
-        <div style="font-size:32px;margin-bottom:12px">📋</div>
-        <div style="font-size:16px;font-weight:600;color:#101828;margin-bottom:6px">No report data yet</div>
-        <div style="font-size:13px;color:#667085">The agent runs daily at 07:00 IST. Reports appear here automatically.<br><small style="color:#98A2B3">${err.message}</small></div>
-      </div>`;
+    const r=await fetch('reports/latest_report.json?t='+Date.now());
+    if(!r.ok) throw new Error(`HTTP ${r.status}`);
+    document.getElementById('main-content').innerHTML=renderDashboard(await r.json());
+  } catch(e) {
+    document.getElementById('main-content').innerHTML=`<div class="err-card"><div style="font-size:32px;margin-bottom:12px">📋</div><div style="font-size:16px;font-weight:600;margin-bottom:6px">No report data yet</div><div style="font-size:13px;color:var(--gray-500)">The agent runs daily at 07:00 IST.<br><small style="color:var(--gray-400)">${e.message}</small></div></div>`;
   }
 }
-loadReport();
-setInterval(loadReport, 5*60*1000);
+loadReport(); setInterval(loadReport,5*60*1000);
 </script>
 </body>
 </html>
