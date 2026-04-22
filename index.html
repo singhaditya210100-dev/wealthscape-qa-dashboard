@@ -143,6 +143,13 @@ body { font-family: 'Inter', sans-serif; background: var(--gray-50); color: var(
 .dp-exact { background: #FEF3F2; border: 1px solid #FECDCA; border-radius: 6px; padding: 8px 10px; }
 .dp-exact .dp-lbl { color: #B42318; }
 .dp-exact .dp-val { font-family: 'SF Mono','Fira Code',monospace; font-size: 11px; color: #B42318; font-weight: 600; word-break: break-all; }
+.exact-row { display: flex; gap: 8px; padding: 3px 0; border-bottom: 1px solid rgba(240,68,56,0.1); align-items: baseline; }
+.exact-row:last-child { border-bottom: none; }
+.exact-row.summary { padding: 4px 0 6px; border-bottom: 1px solid rgba(240,68,56,0.2); margin-bottom: 2px; }
+.exact-lbl { font-size: 10px; font-weight: 700; color: rgba(180,35,24,0.7); white-space: nowrap; flex-shrink: 0; min-width: 120px; }
+.exact-val { font-family: 'SF Mono','Fira Code',monospace; font-size: 11px; color: #B42318; font-weight: 600; word-break: break-all; }
+.exact-val.count { font-size: 13px; font-weight: 800; }
+.exact-val.full { font-family: 'SF Mono','Fira Code',monospace; font-size: 11px; color: #B42318; }
 
 /* Ticket panel */
 .ticket-panel { display: none; margin: 0 20px 10px 84px; background: var(--white); border: 1px solid #C4B5FD; border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-sm); }
@@ -199,6 +206,32 @@ body { font-family: 'Inter', sans-serif; background: var(--gray-50); color: var(
 <script>
 const SI = { PASS:'✓', FAIL:'✕', WARN:'!', SKIP:'–', UNAVAILABLE:'?' };
 let _reportDate = '';
+
+// ── Format pipe-separated detail string into readable rows ──
+function formatExact(exact) {
+  if (!exact || exact === 'No details captured') return '<em style="color:var(--gray-400)">No data captured</em>';
+  
+  const parts = exact.split(' | ').map(p => p.trim()).filter(Boolean);
+  if (parts.length <= 1) return `<span>${esc2(exact)}</span>`;
+  
+  // Check if first part is a count summary (e.g. "Stale holdings: 3")
+  const firstIsCount = /^[A-Za-z\s]+:\s*\d+$/.test(parts[0]);
+  
+  const rows = parts.map((p, i) => {
+    // Split on first colon to get label:value
+    const colonIdx = p.indexOf(':');
+    if (colonIdx === -1) return `<div class="exact-row"><span class="exact-val full">${esc2(p)}</span></div>`;
+    const label = p.slice(0, colonIdx).trim();
+    const val = p.slice(colonIdx + 1).trim();
+    // First row count summary gets different styling
+    if (i === 0 && firstIsCount) return `<div class="exact-row summary"><span class="exact-lbl">${esc2(label)}</span><span class="exact-val count">${esc2(val)}</span></div>`;
+    return `<div class="exact-row"><span class="exact-lbl">${esc2(label)}</span><span class="exact-val">${esc2(val)}</span></div>`;
+  });
+  
+  return rows.join('');
+}
+
+function esc2(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 
 // ── Description-based failure explainer with exact data values ──
 function explainFailure(check) {
@@ -379,7 +412,7 @@ function renderCheck(check, clientName, environment) {
         <div class="dp-hdr"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>Failure Analysis — ${esc(check.check_id)}</div>
         <div class="dp-body">
           <div class="dp-sec"><div class="dp-lbl">What failed</div><div class="dp-val">${exp.what}</div></div>
-          <div class="dp-sec dp-exact"><div class="dp-lbl">Exact failing value</div><div class="dp-val">${esc(exp.exact)}</div></div>
+          <div class="dp-sec dp-exact"><div class="dp-lbl">Exact failing data</div><div class="dp-val">${formatExact(exp.exact)}</div></div>
           <div class="dp-sec"><div class="dp-lbl">Why this happens</div><div class="dp-val">${exp.why}</div></div>
           <div class="dp-sec"><div class="dp-lbl">User impact</div><div class="dp-val">${exp.impact}</div></div>
           <div class="dp-sec"><div class="dp-lbl">Suggested action</div><div class="dp-val">${exp.action}</div></div>
