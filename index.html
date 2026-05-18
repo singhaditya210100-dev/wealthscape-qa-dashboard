@@ -841,6 +841,8 @@ async function triggerWorkflow() {
 
 // Close modal on Escape
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeRunModal(); });
+
+loadReport(); setInterval(loadReport, 5 * 60 * 1000);
 </script>
 </body>
 </html>
