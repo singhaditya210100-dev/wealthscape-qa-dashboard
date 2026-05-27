@@ -327,7 +327,7 @@ body { font-family: 'Inter', sans-serif; background: var(--gray-50); color: var(
       <div class="modal-body">
         <div class="modal-info">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-          <p>Enter a GitHub Personal Access Token with <strong>Actions: write</strong> scope. Your token is used only for this request and never stored.<br>
+          <p>Enter a GitHub Personal Access Token with <strong>Actions: write</strong> scope. With <strong>Remember</strong> on, it is saved only in this browser so you don't re-enter it &mdash; sent solely to GitHub's API, never committed to this site.<br>
           <a href="https://github.com/settings/tokens/new?description=WealthScape+QA+Trigger&scopes=workflow" target="_blank">Generate a token &rarr;</a></p>
         </div>
         <label class="field-lbl" for="pat-input">GitHub Personal Access Token</label>
@@ -337,7 +337,14 @@ body { font-family: 'Inter', sans-serif; background: var(--gray-50); color: var(
             <svg id="eye-icon" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
           </button>
         </div>
-        <div class="field-hint">Sent directly to GitHub API from your browser &mdash; never logged or stored.</div>
+        <div class="field-hint">Sent directly to GitHub's API from your browser. Nothing is logged or committed to this site.</div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:12px;gap:10px;">
+          <label style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--gray-700);cursor:pointer;user-select:none;">
+            <input type="checkbox" id="remember-pat" checked style="width:15px;height:15px;accent-color:var(--purple);cursor:pointer;">
+            Remember on this device
+          </label>
+          <button type="button" id="forget-pat-btn" onclick="forgetPat()" style="display:none;background:none;border:none;color:var(--purple);font-size:12px;font-weight:600;cursor:pointer;padding:4px;">Forget saved token</button>
+        </div>
         <div class="field-err" id="pat-error"></div>
       </div>
       <div class="modal-footer">
@@ -733,11 +740,23 @@ const WORKFLOW_ID = '255722908';
 
 function openRunModal() {
   document.getElementById('run-modal').classList.add('open');
-  document.getElementById('pat-input').value = '';
+  let saved = '';
+  try { saved = localStorage.getItem('ws_pat') || ''; } catch (_) {}
+  document.getElementById('pat-input').value = saved;
+  document.getElementById('remember-pat').checked = true;
+  document.getElementById('forget-pat-btn').style.display = saved ? 'block' : 'none';
   document.getElementById('pat-error').style.display = 'none';
   document.getElementById('pat-error').textContent = '';
   document.getElementById('pat-input').classList.remove('err');
   setTimeout(() => document.getElementById('pat-input').focus(), 80);
+}
+
+function forgetPat() {
+  try { localStorage.removeItem('ws_pat'); } catch (_) {}
+  document.getElementById('pat-input').value = '';
+  document.getElementById('remember-pat').checked = false;
+  document.getElementById('forget-pat-btn').style.display = 'none';
+  document.getElementById('pat-input').focus();
 }
 
 function closeRunModal() {
@@ -809,6 +828,10 @@ async function triggerWorkflow() {
     );
 
     if (res.status === 204) {
+      try {
+        if (document.getElementById('remember-pat').checked) localStorage.setItem('ws_pat', pat);
+        else localStorage.removeItem('ws_pat');
+      } catch (_) {}
       closeRunModal();
       // Update the Run Now button to show queued state
       const runBtn = document.getElementById('run-now-btn');
