@@ -1,10 +1,10 @@
 {
-  "run_id": "8d55616e",
+  "run_id": "7564fd1c",
   "date": "2026-05-31",
-  "run_started": "2026-05-31T05:54:50.327210",
-  "run_completed": "2026-05-31T05:54:57.481216",
+  "run_started": "2026-05-31T09:34:16.900020",
+  "run_completed": "2026-05-31T09:34:22.666258",
   "overall_status": "FAIL",
-  "total_checks": 50,
+  "total_checks": 85,
   "passed": 38,
   "warnings": 3,
   "failed": 5,
@@ -17,8 +17,8 @@
       "passed": 35,
       "warnings": 3,
       "failed": 0,
-      "run_started": "2026-05-31T05:54:50.327746",
-      "run_completed": "2026-05-31T05:54:56.483589",
+      "run_started": "2026-05-31T09:34:16.900447",
+      "run_completed": "2026-05-31T09:34:22.015505",
       "phases": [
         {
           "phase_number": 1,
@@ -423,18 +423,18 @@
       "name": "Crest",
       "environment": "PROD",
       "status": "FAIL",
-      "total_checks": 10,
+      "total_checks": 45,
       "passed": 3,
       "warnings": 0,
       "failed": 5,
-      "run_started": "2026-05-31T05:54:56.484258",
-      "run_completed": "2026-05-31T05:54:57.481209",
+      "run_started": "2026-05-31T09:34:22.016030",
+      "run_completed": "2026-05-31T09:34:22.666252",
       "phases": [
         {
           "phase_number": 1,
           "phase_name": "Holdings & ISIN Validation",
           "status": "FAIL",
-          "total": 1,
+          "total": 9,
           "passed": 0,
           "warnings": 0,
           "failed": 1,
@@ -446,6 +446,70 @@
               "details": "HTTP 401 | Error: Failed to obtain authentication token",
               "raw_response": "",
               "tolerance": ""
+            },
+            {
+              "check_id": "BR-ULA-05",
+              "description": "currentValue > 0",
+              "status": "SKIP",
+              "details": "Skipped: Holdings API not reachable (HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-ULA-06",
+              "description": "Holdings list non-empty",
+              "status": "SKIP",
+              "details": "Skipped: Holdings API not reachable (HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-ULA-06",
+              "description": "closingUnits >= 0 for all holdings",
+              "status": "SKIP",
+              "details": "Skipped: Holdings API not reachable (HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-ULA-06",
+              "description": "nav > 0 for all active holdings",
+              "status": "SKIP",
+              "details": "Skipped: Holdings API not reachable (HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-REF-03",
+              "description": "NAV date not stale (within 3 days)",
+              "status": "SKIP",
+              "details": "Skipped: Holdings API not reachable (HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-REF-03",
+              "description": "[PROD] All reference ISINs present in API",
+              "status": "SKIP",
+              "details": "Skipped: Holdings API not reachable (HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-REF-03",
+              "description": "[PROD] Per-ISIN closingUnits match reference (\u00b10.01)",
+              "status": "SKIP",
+              "details": "Skipped: Holdings API not reachable (HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-REF-03",
+              "description": "[PROD] currentValue within 20% of reference snapshot",
+              "status": "SKIP",
+              "details": "Skipped: Holdings API not reachable (HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
             }
           ]
         },
@@ -453,7 +517,7 @@
           "phase_number": 2,
           "phase_name": "Transactions Check",
           "status": "FAIL",
-          "total": 1,
+          "total": 5,
           "passed": 0,
           "warnings": 0,
           "failed": 1,
@@ -465,6 +529,38 @@
               "details": "HTTP 401 | Failed to obtain authentication token",
               "raw_response": "Failed to obtain authentication token",
               "tolerance": ""
+            },
+            {
+              "check_id": "BR-STMT-02",
+              "description": "Required fields present in all transactions",
+              "status": "SKIP",
+              "details": "Skipped: Transactions API not reachable (HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-STMT-02",
+              "description": "txnId unique where present",
+              "status": "SKIP",
+              "details": "Skipped: Transactions API not reachable (HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-STMT-03",
+              "description": "Transaction types are valid",
+              "status": "SKIP",
+              "details": "Skipped: Transactions API not reachable (HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-STMT-04",
+              "description": "Amount \u2248 units \u00d7 nav (where units > 0)",
+              "status": "SKIP",
+              "details": "Skipped: Transactions API not reachable (HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
             }
           ]
         },
@@ -472,7 +568,7 @@
           "phase_number": 3,
           "phase_name": "Insights & Analysis",
           "status": "FAIL",
-          "total": 1,
+          "total": 22,
           "passed": 0,
           "warnings": 0,
           "failed": 1,
@@ -484,6 +580,174 @@
               "details": "HTTP 401 | Error: Failed to obtain authentication token",
               "raw_response": "",
               "tolerance": ""
+            },
+            {
+              "check_id": "BR-ANA-01",
+              "description": "Analysis API reachable",
+              "status": "SKIP",
+              "details": "Skipped: Insights API not reachable (HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-INS-01",
+              "description": "Insights API returns valid structure",
+              "status": "SKIP",
+              "details": "Skipped: Insights API not reachable (HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-INS-01",
+              "description": "currentValue > 0",
+              "status": "SKIP",
+              "details": "Skipped: Insights API not reachable (HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-INS-01",
+              "description": "holdings[] count matches totalHoldings",
+              "status": "SKIP",
+              "details": "Skipped: Insights API not reachable (HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-INS-02",
+              "description": "absoluteReturn = currentValue \u2212 investedValue",
+              "status": "SKIP",
+              "details": "Skipped: Insights API not reachable (HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-INS-02",
+              "description": "SOA + Demat currentValue matches overallSummary",
+              "status": "SKIP",
+              "details": "Skipped: Insights API not reachable (HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-INS-02",
+              "description": "SOA + Demat totalHoldings matches overallSummary",
+              "status": "SKIP",
+              "details": "Skipped: Insights API not reachable (HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-INS-03",
+              "description": "categoryDistribution sums to currentValue",
+              "status": "SKIP",
+              "details": "Skipped: Insights API not reachable (HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-INS-03",
+              "description": "categoryDistribution percentages sum to ~100%",
+              "status": "SKIP",
+              "details": "Skipped: Insights API not reachable (HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-INS-03",
+              "description": "subCategoryDistribution sums to currentValue",
+              "status": "SKIP",
+              "details": "Skipped: Insights API not reachable (HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-INS-03",
+              "description": "AMC distribution sums to currentValue",
+              "status": "SKIP",
+              "details": "Skipped: Insights API not reachable (HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-INS-03",
+              "description": "Market cap distribution percentages sum to ~100%",
+              "status": "SKIP",
+              "details": "Skipped: Insights API not reachable (HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-INS-04",
+              "description": "Per-holding NAV date fresh (within 3 days)",
+              "status": "SKIP",
+              "details": "Skipped: Insights API not reachable (HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-INS-04",
+              "description": "currentNav > 0 for all active holdings",
+              "status": "SKIP",
+              "details": "Skipped: Insights API not reachable (HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-INS-04",
+              "description": "Per-holding currentValue \u2248 totalUnits \u00d7 currentNav (\u00b1\u20b910)",
+              "status": "SKIP",
+              "details": "Skipped: Insights API not reachable (HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-INS-02",
+              "description": "Per-holding absoluteReturn = currentValue \u2212 investedValue",
+              "status": "SKIP",
+              "details": "Skipped: Insights API not reachable (HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-ANA-01",
+              "description": "Analysis API returns valid structure",
+              "status": "SKIP",
+              "details": "Skipped: Insights API not reachable (HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-ANA-01",
+              "description": "Analysis currentValue consistent with Insights",
+              "status": "SKIP",
+              "details": "Skipped: Insights API not reachable (HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-ANA-02",
+              "description": "Analysis schemeCategory sums to currentValue",
+              "status": "SKIP",
+              "details": "Skipped: Insights API not reachable (HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-ANA-02",
+              "description": "Analysis schemeType sums to currentValue",
+              "status": "SKIP",
+              "details": "Skipped: Insights API not reachable (HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-ANA-02",
+              "description": "Analysis totalHoldings > 0",
+              "status": "SKIP",
+              "details": "Skipped: Insights API not reachable (HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
             }
           ]
         },
@@ -491,7 +755,7 @@
           "phase_number": 4,
           "phase_name": "Cross-API Consistency",
           "status": "FAIL",
-          "total": 1,
+          "total": 3,
           "passed": 0,
           "warnings": 0,
           "failed": 1,
@@ -501,6 +765,22 @@
               "description": "All 3 APIs reachable",
               "status": "FAIL",
               "details": "holding-folio: HTTP 401 | insights: HTTP 401 | analysis: HTTP 401",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-ANA-01",
+              "description": "currentValue consistent across 3 APIs",
+              "status": "SKIP",
+              "details": "Skipped: Cross-API consistency requires all 3 APIs reachable (holding-folio: HTTP 401, insights: HTTP 401, analysis: HTTP 401)",
+              "raw_response": "",
+              "tolerance": ""
+            },
+            {
+              "check_id": "BR-ANA-01",
+              "description": "totalHoldings consistent across 3 APIs",
+              "status": "SKIP",
+              "details": "Skipped: Cross-API consistency requires all 3 APIs reachable (holding-folio: HTTP 401, insights: HTTP 401, analysis: HTTP 401)",
               "raw_response": "",
               "tolerance": ""
             }
