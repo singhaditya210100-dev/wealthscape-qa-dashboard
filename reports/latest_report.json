@@ -1,8 +1,8 @@
 {
-  "run_id": "4789d86e",
-  "date": "2026-06-12",
-  "run_started": "2026-06-12T06:12:05.239275",
-  "run_completed": "2026-06-12T06:12:19.376493",
+  "run_id": "8a92e79c",
+  "date": "2026-06-13",
+  "run_started": "2026-06-13T05:56:12.977121",
+  "run_completed": "2026-06-13T05:56:27.592698",
   "overall_status": "FAIL",
   "total_checks": 83,
   "passed": 65,
@@ -17,8 +17,8 @@
       "passed": 35,
       "warnings": 3,
       "failed": 0,
-      "run_started": "2026-06-12T06:12:05.239739",
-      "run_completed": "2026-06-12T06:12:12.600730",
+      "run_started": "2026-06-13T05:56:12.977565",
+      "run_completed": "2026-06-13T05:56:20.396821",
       "phases": [
         {
           "phase_number": 1,
@@ -41,7 +41,7 @@
               "check_id": "BR-ULA-05",
               "description": "currentValue > 0",
               "status": "PASS",
-              "details": "currentValue: \u20b916,645,329.49",
+              "details": "currentValue: \u20b916,565,964.26",
               "raw_response": "",
               "tolerance": ""
             },
@@ -143,7 +143,7 @@
               "check_id": "BR-INS-01",
               "description": "Insights API returns valid structure",
               "status": "PASS",
-              "details": "currentValue: \u20b916,645,329.50 | totalHoldings: 15 | holdings[]: 15",
+              "details": "currentValue: \u20b916,565,964.26 | totalHoldings: 15 | holdings[]: 15",
               "raw_response": "",
               "tolerance": ""
             },
@@ -151,7 +151,7 @@
               "check_id": "BR-INS-01",
               "description": "currentValue > 0",
               "status": "PASS",
-              "details": "currentValue: \u20b916,645,329.50",
+              "details": "currentValue: \u20b916,565,964.26",
               "raw_response": "",
               "tolerance": ""
             },
@@ -167,7 +167,7 @@
               "check_id": "BR-INS-02",
               "description": "absoluteReturn = currentValue \u2212 investedValue",
               "status": "PASS",
-              "details": "currentValue: \u20b916,645,329.50 | investedValue: \u20b9273,941.90 | Expected return: \u20b916,371,387.60 | Actual absoluteReturn: \u20b916,371,387.60 | Delta: \u20b90.00",
+              "details": "currentValue: \u20b916,565,964.26 | investedValue: \u20b9273,941.90 | Expected return: \u20b916,292,022.36 | Actual absoluteReturn: \u20b916,292,022.36 | Delta: \u20b90.00",
               "raw_response": "",
               "tolerance": ""
             },
@@ -175,7 +175,7 @@
               "check_id": "BR-INS-02",
               "description": "SOA + Demat currentValue matches overallSummary",
               "status": "PASS",
-              "details": "overallSummary: \u20b916,645,329.50 | SOA: \u20b916,645,329.50 | Demat: \u20b90.00 | SOA+Demat total: \u20b916,645,329.50 | Delta: \u20b90.00",
+              "details": "overallSummary: \u20b916,565,964.26 | SOA: \u20b916,565,964.26 | Demat: \u20b90.00 | SOA+Demat total: \u20b916,565,964.26 | Delta: \u20b90.00",
               "raw_response": "",
               "tolerance": "\u00b1\u20b9100"
             },
@@ -191,7 +191,7 @@
               "check_id": "BR-INS-03",
               "description": "categoryDistribution sums to currentValue",
               "status": "PASS",
-              "details": "Sum of categories: \u20b916,645,329.50 | currentValue: \u20b916,645,329.50 | Delta: \u20b90.00 | Breakdown: DEBT: \u20b91,244,748.30 | HYBRID: \u20b9106.40 | EQUITY: \u20b915,400,474.80",
+              "details": "Sum of categories: \u20b916,565,964.26 | currentValue: \u20b916,565,964.26 | Delta: \u20b90.00 | Breakdown: DEBT: \u20b91,244,549.54 | HYBRID: \u20b9106.15 | EQUITY: \u20b915,321,308.57",
               "raw_response": "",
               "tolerance": "\u00b1\u20b9100"
             },
@@ -199,7 +199,7 @@
               "check_id": "BR-INS-03",
               "description": "categoryDistribution percentages sum to ~100%",
               "status": "PASS",
-              "details": "Sum: 100.0% | Breakdown: DEBT: 7.48% | HYBRID: 0.0% | EQUITY: 92.52%",
+              "details": "Sum: 100.0% | Breakdown: DEBT: 7.51% | HYBRID: 0.0% | EQUITY: 92.49%",
               "raw_response": "",
               "tolerance": "\u00b11%"
             },
@@ -207,7 +207,7 @@
               "check_id": "BR-INS-03",
               "description": "subCategoryDistribution sums to currentValue",
               "status": "PASS",
-              "details": "Sum: \u20b916,645,329.48 | currentValue: \u20b916,645,329.50 | Delta: \u20b90.02",
+              "details": "Sum: \u20b916,565,964.26 | currentValue: \u20b916,565,964.26 | Delta: \u20b90.00",
               "raw_response": "",
               "tolerance": "\u00b1\u20b9100"
             },
@@ -215,7 +215,7 @@
               "check_id": "BR-INS-03",
               "description": "AMC distribution sums to currentValue",
               "status": "PASS",
-              "details": "Sum: \u20b916,645,329.50 | currentValue: \u20b916,645,329.50 | Delta: \u20b90.00 | Top AMCs: Ltd.: \u20b967,627.77 | Limited: \u20b914,364,185.76 | Limited: \u20b94,046.18 | Limited: \u20b951,413.49 | Limited: \u20b9101,792.42 | Limited: \u20b9673,866.30 | Limited: \u20b9757,753.07 | Limited: \u20b9624,644.51",
+              "details": "Sum: \u20b916,565,964.26 | currentValue: \u20b916,565,964.26 | Delta: \u20b90.00 | Top AMCs: Ltd.: \u20b967,211.06 | Limited: \u20b914,288,779.48 | Limited: \u20b94,039.56 | Limited: \u20b951,270.23 | Limited: \u20b9101,043.04 | Limited: \u20b9673,501.11 | Limited: \u20b9755,726.77 | Limited: \u20b9624,393.01",
               "raw_response": "",
               "tolerance": "\u00b1\u20b9100"
             },
@@ -223,7 +223,7 @@
               "check_id": "BR-INS-03",
               "description": "Market cap distribution percentages sum to ~100%",
               "status": "PASS",
-              "details": "Sum: 100.0% | Breakdown: SMALL: 4.03% | LARGE: 81.96% | MID: 14.01%",
+              "details": "Sum: 100.0% | Breakdown: SMALL: 3.97% | LARGE: 82.0% | MID: 14.03%",
               "raw_response": "",
               "tolerance": "\u00b11%"
             },
@@ -231,7 +231,7 @@
               "check_id": "BR-INS-04",
               "description": "Per-holding NAV date fresh (within 3 days)",
               "status": "WARN",
-              "details": "Stale holdings: 2 | INF846K01J87: navDate=2026-01-16, nav=\u20b920.65, 147d old | INF846K01V16: navDate=2026-01-16, nav=\u20b914.84, 147d old",
+              "details": "Stale holdings: 2 | INF846K01J87: navDate=2026-01-16, nav=\u20b920.65, 148d old | INF846K01V16: navDate=2026-01-16, nav=\u20b914.84, 148d old",
               "raw_response": "",
               "tolerance": ""
             },
@@ -247,7 +247,7 @@
               "check_id": "BR-INS-04",
               "description": "Per-holding currentValue \u2248 totalUnits \u00d7 currentNav (\u00b1\u20b910)",
               "status": "WARN",
-              "details": "Mismatches: 3 | INF179K01756: reported=\u20b9570,881.99, units\u00d7nav=10148.49\u00d7\u20b956.25=\u20b9570,852.56, delta=\u20b929.43 | INF200K01180: reported=\u20b914,364,185.76, units\u00d7nav=159522.48\u00d7\u20b990.04=\u20b914,363,404.10, delta=\u20b9781.66 | INF740K01OK1: reported=\u20b9757,753.07, units\u00d7nav=5065.77\u00d7\u20b9149.58=\u20b9757,737.88, delta=\u20b915.19",
+              "details": "Mismatches: 2 | INF200K01180: reported=\u20b914,288,779.48, units\u00d7nav=159522.48\u00d7\u20b989.57=\u20b914,288,428.53, delta=\u20b9350.95 | INF740K01OK1: reported=\u20b9755,726.77, units\u00d7nav=5065.77\u00d7\u20b9149.18=\u20b9755,711.57, delta=\u20b915.20",
               "raw_response": "",
               "tolerance": "\u00b1\u20b910"
             },
@@ -263,7 +263,7 @@
               "check_id": "BR-ANA-01",
               "description": "Analysis API returns valid structure",
               "status": "PASS",
-              "details": "currentValue: \u20b916,645,329.46 | schemeCategory[]: 11 | schemeType[]: 4",
+              "details": "currentValue: \u20b916,565,964.22 | schemeCategory[]: 11 | schemeType[]: 4",
               "raw_response": "",
               "tolerance": ""
             },
@@ -271,7 +271,7 @@
               "check_id": "BR-ANA-01",
               "description": "Analysis currentValue consistent with Insights",
               "status": "PASS",
-              "details": "Insights currentValue: \u20b916,645,329.50 | Analysis currentValue: \u20b916,645,329.46 | Delta: \u20b90.04",
+              "details": "Insights currentValue: \u20b916,565,964.26 | Analysis currentValue: \u20b916,565,964.22 | Delta: \u20b90.04",
               "raw_response": "",
               "tolerance": "\u00b1\u20b9100"
             },
@@ -279,7 +279,7 @@
               "check_id": "BR-ANA-02",
               "description": "Analysis schemeCategory sums to currentValue",
               "status": "PASS",
-              "details": "Sum: \u20b916,645,329.45 | currentValue: \u20b916,645,329.46 | Delta: \u20b90.01 | Breakdown: Dynamic Asset Allocation or Balanced Advantage: \u20b9106.35 | Mid Cap Fund: \u20b9155,448.59 | Gilt Fund: \u20b9570,881.99 | Arbitrage Fund: \u20b90.02 | ELSS: \u20b9757,753.07 | Small Cap Fund: \u20b967,627.69 | Large Cap Fund: \u20b914,419,645.42 | Aggressive Hybrid Fund: \u20b90.02 | Low Duration Fund: \u20b9673,866.30",
+              "details": "Sum: \u20b916,565,964.23 | currentValue: \u20b916,565,964.22 | Delta: \u20b90.01 | Breakdown: Dynamic Asset Allocation or Balanced Advantage: \u20b9106.10 | Mid Cap Fund: \u20b9154,281.53 | Gilt Fund: \u20b9571,048.43 | Arbitrage Fund: \u20b90.02 | ELSS: \u20b9755,726.77 | Small Cap Fund: \u20b967,210.98 | Large Cap Fund: \u20b914,344,089.27 | Aggressive Hybrid Fund: \u20b90.02 | Low Duration Fund: \u20b9673,501.11",
               "raw_response": "",
               "tolerance": ""
             },
@@ -287,7 +287,7 @@
               "check_id": "BR-ANA-02",
               "description": "Analysis schemeType sums to currentValue",
               "status": "PASS",
-              "details": "Sum: \u20b916,645,329.53 | currentValue: \u20b916,645,329.46 | Delta: \u20b90.07 | Breakdown: Debt Scheme: \u20b91,244,748.33 | Other Scheme: \u20b90.01 | Equity Scheme: \u20b915,400,474.80 | Hybrid Scheme: \u20b9106.39",
+              "details": "Sum: \u20b916,565,964.21 | currentValue: \u20b916,565,964.22 | Delta: \u20b90.01 | Breakdown: Debt Scheme: \u20b91,244,549.61 | Other Scheme: \u20b90.01 | Equity Scheme: \u20b915,321,308.45 | Hybrid Scheme: \u20b9106.14",
               "raw_response": "",
               "tolerance": ""
             },
@@ -322,7 +322,7 @@
               "check_id": "BR-ANA-01",
               "description": "currentValue consistent across 3 APIs",
               "status": "PASS",
-              "details": "holding-folio: \u20b916,645,329.49 | insights: \u20b916,645,329.50 | analysis: \u20b916,645,329.46 | max \u0394: \u20b90.04 | largest gap: between insights (\u20b916,645,329.50) and analysis (\u20b916,645,329.46)",
+              "details": "holding-folio: \u20b916,565,964.26 | insights: \u20b916,565,964.26 | analysis: \u20b916,565,964.22 | max \u0394: \u20b90.04 | largest gap: between holding-folio (\u20b916,565,964.26) and analysis (\u20b916,565,964.22)",
               "raw_response": "",
               "tolerance": "\u00b1\u20b9100"
             },
@@ -427,8 +427,8 @@
       "passed": 30,
       "warnings": 5,
       "failed": 6,
-      "run_started": "2026-06-12T06:12:12.601461",
-      "run_completed": "2026-06-12T06:12:19.376487",
+      "run_started": "2026-06-13T05:56:20.397547",
+      "run_completed": "2026-06-13T05:56:27.592692",
       "phases": [
         {
           "phase_number": 1,
@@ -483,7 +483,7 @@
               "check_id": "BR-REF-03",
               "description": "NAV date not stale (within 3 days)",
               "status": "WARN",
-              "details": "Stale holdings: 1 | INF879O01027: navDate=2026-06-05, nav=\u20b989.1488, 7d old",
+              "details": "Stale holdings: 12 | INF174K01LC6: navDate=2026-06-10, nav=\u20b942.538, 3d old | INF109K01BL4: navDate=2026-06-10, nav=\u20b9103.86, 3d old | INF843K01AO4: navDate=2026-06-10, nav=\u20b9121.402, 3d old | INF966L01689: navDate=2026-06-10, nav=\u20b9289.7545, 3d old | INF843K01013: navDate=2026-06-10, nav=\u20b9102.828, 3d old",
               "raw_response": "",
               "tolerance": ""
             },
@@ -491,7 +491,7 @@
               "check_id": "BR-REF-03",
               "description": "[PROD] All reference ISINs present in API",
               "status": "FAIL",
-              "details": "Missing from API: 6 | ISINs: INF846K01DP8, INF846K01164, INF0QA701094, INF0QA701011, INF769K01010",
+              "details": "Missing from API: 6 | ISINs: INF0QA701011, INF769K01010, INF192K01635, INF846K01DP8, INF0QA701094",
               "raw_response": "",
               "tolerance": ""
             },
@@ -665,7 +665,7 @@
               "check_id": "BR-INS-04",
               "description": "Per-holding NAV date fresh (within 3 days)",
               "status": "WARN",
-              "details": "Stale holdings: 9 | INF0QA701011: navDate=2026-04-08, nav=\u20b91205.89, 65d old | INF0QA701094: navDate=2026-04-07, nav=\u20b91199.67, 66d old | INF192K01635: navDate=2026-04-08, nav=\u20b988.93, 65d old | INF769K01010: navDate=2026-04-08, nav=\u20b9107.83, 65d old",
+              "details": "Stale holdings: 27 | INF0QA701011: navDate=2026-04-08, nav=\u20b91205.89, 66d old | INF0QA701094: navDate=2026-04-07, nav=\u20b91199.67, 67d old | INF109K01BL4: navDate=2026-06-10, nav=\u20b9103.86, 3d old | INF174K01LC6: navDate=2026-06-10, nav=\u20b942.54, 3d old",
               "raw_response": "",
               "tolerance": ""
             },
