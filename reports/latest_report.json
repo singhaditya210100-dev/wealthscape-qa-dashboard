@@ -1,12 +1,12 @@
 {
-  "run_id": "70dc1bc0",
-  "date": "2026-06-14",
-  "run_started": "2026-06-14T06:15:11.347441",
-  "run_completed": "2026-06-14T06:15:49.900627",
+  "run_id": "c050b9b6",
+  "date": "2026-06-15",
+  "run_started": "2026-06-15T06:55:35.821750",
+  "run_completed": "2026-06-15T06:56:12.619494",
   "overall_status": "FAIL",
   "total_checks": 85,
-  "passed": 48,
-  "warnings": 5,
+  "passed": 47,
+  "warnings": 6,
   "failed": 5,
   "clients": [
     {
@@ -14,19 +14,19 @@
       "environment": "UAT",
       "status": "FAIL",
       "total_checks": 40,
-      "passed": 35,
-      "warnings": 3,
+      "passed": 34,
+      "warnings": 4,
       "failed": 0,
-      "run_started": "2026-06-14T06:15:11.347847",
-      "run_completed": "2026-06-14T06:15:19.849808",
+      "run_started": "2026-06-15T06:55:35.822270",
+      "run_completed": "2026-06-15T06:55:43.045260",
       "phases": [
         {
           "phase_number": 1,
           "phase_name": "Holdings & ISIN Validation",
-          "status": "PASS",
+          "status": "WARN",
           "total": 6,
-          "passed": 6,
-          "warnings": 0,
+          "passed": 5,
+          "warnings": 1,
           "failed": 0,
           "checks": [
             {
@@ -72,8 +72,8 @@
             {
               "check_id": "BR-REF-03",
               "description": "NAV date not stale (within 3 days)",
-              "status": "PASS",
-              "details": "Stale holdings: 0",
+              "status": "WARN",
+              "details": "Stale holdings: 10 | INF109K01BL4: navDate=2026-06-12, nav=\u20b9105.7, 3d old | INF179K01756: navDate=2026-06-12, nav=\u20b956.3215, 3d old | INF740K01OK1: navDate=2026-06-12, nav=\u20b9152.374, 3d old | INF843K01013: navDate=2026-06-12, nav=\u20b9104.199, 3d old | INF760K01FR2: navDate=2026-06-12, nav=\u20b969.43, 3d old",
               "raw_response": "",
               "tolerance": ""
             }
@@ -231,7 +231,7 @@
               "check_id": "BR-INS-04",
               "description": "Per-holding NAV date fresh (within 3 days)",
               "status": "WARN",
-              "details": "Stale holdings: 2 | INF846K01J87: navDate=2026-01-16, nav=\u20b920.65, 149d old | INF846K01V16: navDate=2026-01-16, nav=\u20b914.84, 149d old",
+              "details": "Stale holdings: 15 | INF109K01BL4: navDate=2026-06-12, nav=\u20b9105.7, 3d old | INF178L01AX4: navDate=2026-06-12, nav=\u20b93868.52, 3d old | INF179K01756: navDate=2026-06-12, nav=\u20b956.32, 3d old | INF179K01CR2: navDate=2026-06-12, nav=\u20b9198.8, 3d old",
               "raw_response": "",
               "tolerance": ""
             },
@@ -427,8 +427,8 @@
       "passed": 13,
       "warnings": 2,
       "failed": 5,
-      "run_started": "2026-06-14T06:15:19.850281",
-      "run_completed": "2026-06-14T06:15:49.900620",
+      "run_started": "2026-06-15T06:55:43.045804",
+      "run_completed": "2026-06-15T06:56:12.619488",
       "phases": [
         {
           "phase_number": 1,
@@ -483,7 +483,7 @@
               "check_id": "BR-REF-03",
               "description": "NAV date not stale (within 3 days)",
               "status": "WARN",
-              "details": "Stale holdings: 12 | INF174K01LC6: navDate=2026-06-10, nav=\u20b942.538, 4d old | INF109K01BL4: navDate=2026-06-10, nav=\u20b9103.86, 4d old | INF843K01AO4: navDate=2026-06-10, nav=\u20b9121.402, 4d old | INF966L01689: navDate=2026-06-10, nav=\u20b9289.7545, 4d old | INF843K01013: navDate=2026-06-10, nav=\u20b9102.828, 4d old",
+              "details": "Stale holdings: 12 | INF174K01LC6: navDate=2026-06-10, nav=\u20b942.538, 5d old | INF109K01BL4: navDate=2026-06-10, nav=\u20b9103.86, 5d old | INF843K01AO4: navDate=2026-06-10, nav=\u20b9121.402, 5d old | INF966L01689: navDate=2026-06-10, nav=\u20b9289.7545, 5d old | INF843K01013: navDate=2026-06-10, nav=\u20b9102.828, 5d old",
               "raw_response": "",
               "tolerance": ""
             },
@@ -491,7 +491,7 @@
               "check_id": "BR-REF-03",
               "description": "[PROD] All reference ISINs present in API",
               "status": "FAIL",
-              "details": "Missing from API: 6 | ISINs: INF846K01DP8, INF769K01010, INF192K01635, INF0QA701094, INF846K01164",
+              "details": "Missing from API: 6 | ISINs: INF846K01DP8, INF0QA701094, INF192K01635, INF769K01010, INF846K01164",
               "raw_response": "",
               "tolerance": ""
             },
