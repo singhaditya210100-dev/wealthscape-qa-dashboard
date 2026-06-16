@@ -1,8 +1,8 @@
 {
-  "run_id": "c050b9b6",
-  "date": "2026-06-15",
-  "run_started": "2026-06-15T06:55:35.821750",
-  "run_completed": "2026-06-15T06:56:12.619494",
+  "run_id": "163764fb",
+  "date": "2026-06-16",
+  "run_started": "2026-06-16T06:59:58.201151",
+  "run_completed": "2026-06-16T07:00:33.541051",
   "overall_status": "FAIL",
   "total_checks": 85,
   "passed": 47,
@@ -17,8 +17,8 @@
       "passed": 34,
       "warnings": 4,
       "failed": 0,
-      "run_started": "2026-06-15T06:55:35.822270",
-      "run_completed": "2026-06-15T06:55:43.045260",
+      "run_started": "2026-06-16T06:59:58.201651",
+      "run_completed": "2026-06-16T07:00:05.904363",
       "phases": [
         {
           "phase_number": 1,
@@ -73,7 +73,7 @@
               "check_id": "BR-REF-03",
               "description": "NAV date not stale (within 3 days)",
               "status": "WARN",
-              "details": "Stale holdings: 10 | INF109K01BL4: navDate=2026-06-12, nav=\u20b9105.7, 3d old | INF179K01756: navDate=2026-06-12, nav=\u20b956.3215, 3d old | INF740K01OK1: navDate=2026-06-12, nav=\u20b9152.374, 3d old | INF843K01013: navDate=2026-06-12, nav=\u20b9104.199, 3d old | INF760K01FR2: navDate=2026-06-12, nav=\u20b969.43, 3d old",
+              "details": "Stale holdings: 10 | INF109K01BL4: navDate=2026-06-12, nav=\u20b9105.7, 4d old | INF179K01756: navDate=2026-06-12, nav=\u20b956.3215, 4d old | INF740K01OK1: navDate=2026-06-12, nav=\u20b9152.374, 4d old | INF843K01013: navDate=2026-06-12, nav=\u20b9104.199, 4d old | INF760K01FR2: navDate=2026-06-12, nav=\u20b969.43, 4d old",
               "raw_response": "",
               "tolerance": ""
             }
@@ -231,7 +231,7 @@
               "check_id": "BR-INS-04",
               "description": "Per-holding NAV date fresh (within 3 days)",
               "status": "WARN",
-              "details": "Stale holdings: 15 | INF109K01BL4: navDate=2026-06-12, nav=\u20b9105.7, 3d old | INF178L01AX4: navDate=2026-06-12, nav=\u20b93868.52, 3d old | INF179K01756: navDate=2026-06-12, nav=\u20b956.32, 3d old | INF179K01CR2: navDate=2026-06-12, nav=\u20b9198.8, 3d old",
+              "details": "Stale holdings: 15 | INF109K01BL4: navDate=2026-06-12, nav=\u20b9105.7, 4d old | INF178L01AX4: navDate=2026-06-12, nav=\u20b93868.52, 4d old | INF179K01756: navDate=2026-06-12, nav=\u20b956.32, 4d old | INF179K01CR2: navDate=2026-06-12, nav=\u20b9198.8, 4d old",
               "raw_response": "",
               "tolerance": ""
             },
@@ -427,8 +427,8 @@
       "passed": 13,
       "warnings": 2,
       "failed": 5,
-      "run_started": "2026-06-15T06:55:43.045804",
-      "run_completed": "2026-06-15T06:56:12.619488",
+      "run_started": "2026-06-16T07:00:05.905082",
+      "run_completed": "2026-06-16T07:00:33.541045",
       "phases": [
         {
           "phase_number": 1,
@@ -443,7 +443,7 @@
               "check_id": "BR-ULA-05",
               "description": "Holdings API reachable",
               "status": "PASS",
-              "details": "HTTP 200 | totalFiData: 15",
+              "details": "HTTP 200 | totalFiData: 16",
               "raw_response": "",
               "tolerance": ""
             },
@@ -451,7 +451,7 @@
               "check_id": "BR-ULA-05",
               "description": "currentValue > 0",
               "status": "PASS",
-              "details": "currentValue: \u20b9507,360.17",
+              "details": "currentValue: \u20b9512,752.37",
               "raw_response": "",
               "tolerance": ""
             },
@@ -459,7 +459,7 @@
               "check_id": "BR-ULA-06",
               "description": "Holdings list non-empty",
               "status": "PASS",
-              "details": "holdings[]: 21 | totalFiData: 15",
+              "details": "holdings[]: 23 | totalFiData: 16",
               "raw_response": "",
               "tolerance": ""
             },
@@ -475,7 +475,7 @@
               "check_id": "BR-ULA-06",
               "description": "nav > 0 for all active holdings",
               "status": "PASS",
-              "details": "Active holdings: 12 | Zero/negative NAV: 0",
+              "details": "Active holdings: 14 | Zero/negative NAV: 0",
               "raw_response": "",
               "tolerance": ""
             },
@@ -483,7 +483,7 @@
               "check_id": "BR-REF-03",
               "description": "NAV date not stale (within 3 days)",
               "status": "WARN",
-              "details": "Stale holdings: 12 | INF174K01LC6: navDate=2026-06-10, nav=\u20b942.538, 5d old | INF109K01BL4: navDate=2026-06-10, nav=\u20b9103.86, 5d old | INF843K01AO4: navDate=2026-06-10, nav=\u20b9121.402, 5d old | INF966L01689: navDate=2026-06-10, nav=\u20b9289.7545, 5d old | INF843K01013: navDate=2026-06-10, nav=\u20b9102.828, 5d old",
+              "details": "Stale holdings: 12 | INF109K01BL4: navDate=2026-06-12, nav=\u20b9105.7, 4d old | INF204K01323: navDate=2026-06-12, nav=\u20b94340.177, 4d old | INF843K01AO4: navDate=2026-06-12, nav=\u20b9123.028, 4d old | INF843K01013: navDate=2026-06-12, nav=\u20b9104.199, 4d old | INF879O01027: navDate=2026-06-12, nav=\u20b989.2945, 4d old",
               "raw_response": "",
               "tolerance": ""
             },
@@ -491,7 +491,7 @@
               "check_id": "BR-REF-03",
               "description": "[PROD] All reference ISINs present in API",
               "status": "FAIL",
-              "details": "Missing from API: 6 | ISINs: INF846K01DP8, INF0QA701094, INF192K01635, INF769K01010, INF846K01164",
+              "details": "Missing from API: 6 | ISINs: INF0QA701094, INF0QA701011, INF769K01010, INF192K01635, INF846K01164 | Extra in API: 2",
               "raw_response": "",
               "tolerance": ""
             },
@@ -507,7 +507,7 @@
               "check_id": "BR-REF-03",
               "description": "[PROD] currentValue within 20% of reference snapshot",
               "status": "PASS",
-              "details": "API: \u20b9507,360.17 | Ref snapshot: \u20b9472,491.01 | Delta: 7.4%",
+              "details": "API: \u20b9512,752.37 | Ref snapshot: \u20b9472,491.01 | Delta: 8.5%",
               "raw_response": "",
               "tolerance": "\u00b120%"
             }
