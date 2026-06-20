@@ -1,13 +1,13 @@
 {
-  "run_id": "89cd2a14",
-  "date": "2026-06-19",
-  "run_started": "2026-06-19T06:40:09.868510",
-  "run_completed": "2026-06-19T06:40:43.511549",
+  "run_id": "b19bbb03",
+  "date": "2026-06-20",
+  "run_started": "2026-06-20T05:53:46.103753",
+  "run_completed": "2026-06-20T05:54:02.841634",
   "overall_status": "FAIL",
-  "total_checks": 85,
-  "passed": 45,
-  "warnings": 5,
-  "failed": 8,
+  "total_checks": 83,
+  "passed": 61,
+  "warnings": 9,
+  "failed": 9,
   "clients": [
     {
       "name": "Dhanprayoga",
@@ -17,8 +17,8 @@
       "passed": 31,
       "warnings": 4,
       "failed": 3,
-      "run_started": "2026-06-19T06:40:09.868975",
-      "run_completed": "2026-06-19T06:40:17.012753",
+      "run_started": "2026-06-20T05:53:46.104072",
+      "run_completed": "2026-06-20T05:53:52.795149",
       "phases": [
         {
           "phase_number": 1,
@@ -73,7 +73,7 @@
               "check_id": "BR-REF-03",
               "description": "NAV date not stale (within 3 days)",
               "status": "WARN",
-              "details": "Stale holdings: 10 | INF109K01BL4: navDate=2026-06-15, nav=\u20b9107.13, 4d old | INF179K01756: navDate=2026-06-15, nav=\u20b956.4399, 4d old | INF740K01OK1: navDate=2026-06-15, nav=\u20b9153.991, 4d old | INF843K01013: navDate=2026-06-15, nav=\u20b9105.672, 4d old | INF760K01FR2: navDate=2026-06-15, nav=\u20b970.32, 4d old",
+              "details": "Stale holdings: 10 | INF109K01BL4: navDate=2026-06-15, nav=\u20b9107.13, 5d old | INF179K01756: navDate=2026-06-15, nav=\u20b956.4399, 5d old | INF740K01OK1: navDate=2026-06-15, nav=\u20b9153.991, 5d old | INF843K01013: navDate=2026-06-15, nav=\u20b9105.672, 5d old | INF760K01FR2: navDate=2026-06-15, nav=\u20b970.32, 5d old",
               "raw_response": "",
               "tolerance": ""
             }
@@ -231,7 +231,7 @@
               "check_id": "BR-INS-04",
               "description": "Per-holding NAV date fresh (within 3 days)",
               "status": "WARN",
-              "details": "Stale holdings: 15 | INF109K01BL4: navDate=2026-06-15, nav=\u20b9107.13, 4d old | INF178L01AX4: navDate=2026-06-15, nav=\u20b93871.85, 4d old | INF179K01756: navDate=2026-06-15, nav=\u20b956.44, 4d old | INF179K01CR2: navDate=2026-06-15, nav=\u20b9201.39, 4d old",
+              "details": "Stale holdings: 15 | INF109K01BL4: navDate=2026-06-15, nav=\u20b9107.13, 5d old | INF178L01AX4: navDate=2026-06-15, nav=\u20b93871.85, 5d old | INF179K01756: navDate=2026-06-15, nav=\u20b956.44, 5d old | INF179K01CR2: navDate=2026-06-15, nav=\u20b9201.39, 5d old",
               "raw_response": "",
               "tolerance": ""
             },
@@ -263,7 +263,7 @@
               "check_id": "BR-ANA-01",
               "description": "Analysis API returns valid structure",
               "status": "PASS",
-              "details": "currentValue: \u20b917,250,070.16 | schemeCategory[]: 11 | schemeType[]: 4",
+              "details": "currentValue: \u20b917,322,544.64 | schemeCategory[]: 11 | schemeType[]: 4",
               "raw_response": "",
               "tolerance": ""
             },
@@ -271,7 +271,7 @@
               "check_id": "BR-ANA-01",
               "description": "Analysis currentValue consistent with Insights",
               "status": "FAIL",
-              "details": "Insights currentValue: \u20b917,143,632.78 | Analysis currentValue: \u20b917,250,070.16 | Delta: \u20b9106437.38",
+              "details": "Insights currentValue: \u20b917,143,632.78 | Analysis currentValue: \u20b917,322,544.64 | Delta: \u20b9178911.86",
               "raw_response": "",
               "tolerance": "\u00b1\u20b9100"
             },
@@ -279,7 +279,7 @@
               "check_id": "BR-ANA-02",
               "description": "Analysis schemeCategory sums to currentValue",
               "status": "PASS",
-              "details": "Sum: \u20b917,250,070.17 | currentValue: \u20b917,250,070.16 | Delta: \u20b90.01 | Breakdown: Dynamic Asset Allocation or Balanced Advantage: \u20b9109.51 | Mid Cap Fund: \u20b9160,481.04 | Gilt Fund: \u20b9573,886.96 | Arbitrage Fund: \u20b90.02 | ELSS: \u20b9783,507.45 | Small Cap Fund: \u20b970,445.97 | Large Cap Fund: \u20b914,987,214.83 | Aggressive Hybrid Fund: \u20b90.02 | Low Duration Fund: \u20b9674,424.37",
+              "details": "Sum: \u20b917,322,544.63 | currentValue: \u20b917,322,544.64 | Delta: \u20b90.01 | Breakdown: Dynamic Asset Allocation or Balanced Advantage: \u20b9109.77 | Mid Cap Fund: \u20b9161,261.40 | Gilt Fund: \u20b9575,388.94 | Arbitrage Fund: \u20b90.02 | ELSS: \u20b9786,521.58 | Small Cap Fund: \u20b970,791.40 | Large Cap Fund: \u20b915,053,786.50 | Aggressive Hybrid Fund: \u20b90.02 | Low Duration Fund: \u20b9674,685.00",
               "raw_response": "",
               "tolerance": ""
             },
@@ -287,7 +287,7 @@
               "check_id": "BR-ANA-02",
               "description": "Analysis schemeType sums to currentValue",
               "status": "FAIL",
-              "details": "Sum: \u20b917,143,632.96 | currentValue: \u20b917,250,070.16 | Delta: \u20b9106437.20 | Breakdown: Debt Scheme: \u20b91,247,063.04 | Other Scheme: \u20b90.01 | Equity Scheme: \u20b915,896,461.22 | Hybrid Scheme: \u20b9108.69",
+              "details": "Sum: \u20b917,143,632.96 | currentValue: \u20b917,322,544.64 | Delta: \u20b9178911.68 | Breakdown: Debt Scheme: \u20b91,247,063.04 | Other Scheme: \u20b90.01 | Equity Scheme: \u20b915,896,461.22 | Hybrid Scheme: \u20b9108.69",
               "raw_response": "",
               "tolerance": ""
             },
@@ -322,7 +322,7 @@
               "check_id": "BR-ANA-01",
               "description": "currentValue consistent across 3 APIs",
               "status": "FAIL",
-              "details": "holding-folio: \u20b917,143,632.78 | insights: \u20b917,143,632.78 | analysis: \u20b917,250,070.16 | max \u0394: \u20b9106437.38 | largest gap: between analysis (\u20b917,250,070.16) and holding-folio (\u20b917,143,632.78)",
+              "details": "holding-folio: \u20b917,143,632.78 | insights: \u20b917,143,632.78 | analysis: \u20b917,322,544.64 | max \u0394: \u20b9178911.86 | largest gap: between analysis (\u20b917,322,544.64) and holding-folio (\u20b917,143,632.78)",
               "raw_response": "",
               "tolerance": "\u00b1\u20b9100"
             },
@@ -423,12 +423,12 @@
       "name": "Crest",
       "environment": "PROD",
       "status": "FAIL",
-      "total_checks": 45,
-      "passed": 14,
-      "warnings": 1,
-      "failed": 5,
-      "run_started": "2026-06-19T06:40:17.013520",
-      "run_completed": "2026-06-19T06:40:43.511542",
+      "total_checks": 43,
+      "passed": 30,
+      "warnings": 5,
+      "failed": 6,
+      "run_started": "2026-06-20T05:53:52.795628",
+      "run_completed": "2026-06-20T05:54:02.841628",
       "phases": [
         {
           "phase_number": 1,
@@ -451,7 +451,7 @@
               "check_id": "BR-ULA-05",
               "description": "currentValue > 0",
               "status": "PASS",
-              "details": "currentValue: \u20b9523,554.43",
+              "details": "currentValue: \u20b9524,433.97",
               "raw_response": "",
               "tolerance": ""
             },
@@ -491,7 +491,7 @@
               "check_id": "BR-REF-03",
               "description": "[PROD] All reference ISINs present in API",
               "status": "FAIL",
-              "details": "Missing from API: 6 | ISINs: INF769K01010, INF846K01164, INF846K01DP8, INF0QA701011, INF192K01635 | Extra in API: 2",
+              "details": "Missing from API: 6 | ISINs: INF846K01164, INF0QA701011, INF769K01010, INF846K01DP8, INF0QA701094 | Extra in API: 2",
               "raw_response": "",
               "tolerance": ""
             },
@@ -507,7 +507,7 @@
               "check_id": "BR-REF-03",
               "description": "[PROD] currentValue within 20% of reference snapshot",
               "status": "PASS",
-              "details": "API: \u20b9523,554.43 | Ref snapshot: \u20b9472,491.01 | Delta: 10.8%",
+              "details": "API: \u20b9524,433.97 | Ref snapshot: \u20b9472,491.01 | Delta: 11.0%",
               "raw_response": "",
               "tolerance": "\u00b120%"
             }
@@ -568,184 +568,168 @@
           "phase_number": 3,
           "phase_name": "Insights & Analysis",
           "status": "FAIL",
-          "total": 22,
-          "passed": 0,
-          "warnings": 0,
-          "failed": 1,
+          "total": 20,
+          "passed": 15,
+          "warnings": 3,
+          "failed": 2,
           "checks": [
             {
               "check_id": "BR-INS-01",
-              "description": "Insights API reachable",
-              "status": "FAIL",
-              "details": "HTTP 0 | Error: Request timeout after 10s",
-              "raw_response": "",
-              "tolerance": ""
-            },
-            {
-              "check_id": "BR-ANA-01",
-              "description": "Analysis API reachable",
-              "status": "SKIP",
-              "details": "Skipped: Insights API not reachable (HTTP 0)",
-              "raw_response": "",
-              "tolerance": ""
-            },
-            {
-              "check_id": "BR-INS-01",
               "description": "Insights API returns valid structure",
-              "status": "SKIP",
-              "details": "Skipped: Insights API not reachable (HTTP 0)",
+              "status": "PASS",
+              "details": "currentValue: \u20b9524,433.96 | totalHoldings: 29 | holdings[]: 29",
               "raw_response": "",
               "tolerance": ""
             },
             {
               "check_id": "BR-INS-01",
               "description": "currentValue > 0",
-              "status": "SKIP",
-              "details": "Skipped: Insights API not reachable (HTTP 0)",
+              "status": "PASS",
+              "details": "currentValue: \u20b9524,433.96",
               "raw_response": "",
               "tolerance": ""
             },
             {
               "check_id": "BR-INS-01",
               "description": "holdings[] count matches totalHoldings",
-              "status": "SKIP",
-              "details": "Skipped: Insights API not reachable (HTTP 0)",
+              "status": "PASS",
+              "details": "totalHoldings field: 29 | holdings[] length: 29 | Difference: 0",
               "raw_response": "",
               "tolerance": ""
             },
             {
               "check_id": "BR-INS-02",
               "description": "absoluteReturn = currentValue \u2212 investedValue",
-              "status": "SKIP",
-              "details": "Skipped: Insights API not reachable (HTTP 0)",
+              "status": "PASS",
+              "details": "currentValue: \u20b9524,433.96 | investedValue: \u20b9504,902.96 | Expected return: \u20b919,531.00 | Actual absoluteReturn: \u20b919,531.00 | Delta: \u20b90.00",
               "raw_response": "",
               "tolerance": ""
             },
             {
               "check_id": "BR-INS-02",
               "description": "SOA + Demat currentValue matches overallSummary",
-              "status": "SKIP",
-              "details": "Skipped: Insights API not reachable (HTTP 0)",
+              "status": "PASS",
+              "details": "overallSummary: \u20b9524,433.96 | SOA: \u20b9362,450.57 | Demat: \u20b9161,983.39 | SOA+Demat total: \u20b9524,433.96 | Delta: \u20b90.00",
               "raw_response": "",
-              "tolerance": ""
+              "tolerance": "\u00b1\u20b9100"
             },
             {
               "check_id": "BR-INS-02",
               "description": "SOA + Demat totalHoldings matches overallSummary",
-              "status": "SKIP",
-              "details": "Skipped: Insights API not reachable (HTTP 0)",
+              "status": "WARN",
+              "details": "overallSummary totalHoldings: 29 | SOA totalHoldings: 19 | Demat totalHoldings: 10",
               "raw_response": "",
               "tolerance": ""
             },
             {
               "check_id": "BR-INS-03",
               "description": "categoryDistribution sums to currentValue",
-              "status": "SKIP",
-              "details": "Skipped: Insights API not reachable (HTTP 0)",
+              "status": "PASS",
+              "details": "Sum of categories: \u20b9524,433.97 | currentValue: \u20b9524,433.96 | Delta: \u20b90.01 | Breakdown: HYBRID: \u20b969,642.46 | OTHERS: \u20b999.90 | EQUITY: \u20b9454,691.61",
               "raw_response": "",
-              "tolerance": ""
+              "tolerance": "\u00b1\u20b9100"
             },
             {
               "check_id": "BR-INS-03",
               "description": "categoryDistribution percentages sum to ~100%",
-              "status": "SKIP",
-              "details": "Skipped: Insights API not reachable (HTTP 0)",
+              "status": "PASS",
+              "details": "Sum: 100.0% | Breakdown: HYBRID: 13.28% | OTHERS: 0.02% | EQUITY: 86.7%",
               "raw_response": "",
-              "tolerance": ""
+              "tolerance": "\u00b11%"
             },
             {
               "check_id": "BR-INS-03",
               "description": "subCategoryDistribution sums to currentValue",
-              "status": "SKIP",
-              "details": "Skipped: Insights API not reachable (HTTP 0)",
+              "status": "PASS",
+              "details": "Sum: \u20b9524,433.96 | currentValue: \u20b9524,433.96 | Delta: \u20b90.00",
               "raw_response": "",
-              "tolerance": ""
+              "tolerance": "\u00b1\u20b9100"
             },
             {
               "check_id": "BR-INS-03",
               "description": "AMC distribution sums to currentValue",
-              "status": "SKIP",
-              "details": "Skipped: Insights API not reachable (HTTP 0)",
+              "status": "PASS",
+              "details": "Sum: \u20b9524,433.96 | currentValue: \u20b9524,433.96 | Delta: \u20b90.00 | Top AMCs: Limited: \u20b9103.19 | Limited: \u20b9411.56 | Ltd.: \u20b967,473.83 | Limited: \u20b932,041.06 | Limited: \u20b985,931.04 | Limited: \u20b934,546.08 | Ltd.: \u20b90.08 | Limited: \u20b933,999.09 | Limited: \u20b9107.27 | Ltd.: \u20b921,501.44 | Limited: \u20b9248,319.32",
               "raw_response": "",
-              "tolerance": ""
+              "tolerance": "\u00b1\u20b9100"
             },
             {
               "check_id": "BR-INS-03",
               "description": "Market cap distribution percentages sum to ~100%",
-              "status": "SKIP",
-              "details": "Skipped: Insights API not reachable (HTTP 0)",
+              "status": "PASS",
+              "details": "Sum: 100.0% | Breakdown: SMALL: 16.11% | LARGE: 23.17% | MID: 60.71%",
               "raw_response": "",
-              "tolerance": ""
+              "tolerance": "\u00b11%"
             },
             {
               "check_id": "BR-INS-04",
               "description": "Per-holding NAV date fresh (within 3 days)",
-              "status": "SKIP",
-              "details": "Skipped: Insights API not reachable (HTTP 0)",
+              "status": "WARN",
+              "details": "Stale holdings: 6 | INF0QA701011: navDate=2026-04-08, nav=\u20b91205.89, 73d old | INF0QA701094: navDate=2026-04-07, nav=\u20b91199.67, 74d old | INF192K01635: navDate=2026-04-08, nav=\u20b988.93, 73d old | INF769K01010: navDate=2026-04-08, nav=\u20b9107.83, 73d old",
               "raw_response": "",
               "tolerance": ""
             },
             {
               "check_id": "BR-INS-04",
               "description": "currentNav > 0 for all active holdings",
-              "status": "SKIP",
-              "details": "Skipped: Insights API not reachable (HTTP 0)",
+              "status": "PASS",
+              "details": "Zero NAV count: 0",
               "raw_response": "",
               "tolerance": ""
             },
             {
               "check_id": "BR-INS-04",
               "description": "Per-holding currentValue \u2248 totalUnits \u00d7 currentNav (\u00b1\u20b910)",
-              "status": "SKIP",
-              "details": "Skipped: Insights API not reachable (HTTP 0)",
+              "status": "WARN",
+              "details": "Mismatches: 1 | INF204K01323: reported=\u20b9103.19, units\u00d7nav=0.02\u00d7\u20b94486.35=\u20b989.73, delta=\u20b913.46",
               "raw_response": "",
-              "tolerance": ""
+              "tolerance": "\u00b1\u20b910"
             },
             {
               "check_id": "BR-INS-02",
               "description": "Per-holding absoluteReturn = currentValue \u2212 investedValue",
-              "status": "SKIP",
-              "details": "Skipped: Insights API not reachable (HTTP 0)",
+              "status": "PASS",
+              "details": "Mismatches: 0",
               "raw_response": "",
               "tolerance": ""
             },
             {
               "check_id": "BR-ANA-01",
               "description": "Analysis API returns valid structure",
-              "status": "SKIP",
-              "details": "Skipped: Insights API not reachable (HTTP 0)",
+              "status": "PASS",
+              "details": "currentValue: \u20b9455,841.60 | schemeCategory[]: 10 | schemeType[]: 4",
               "raw_response": "",
               "tolerance": ""
             },
             {
               "check_id": "BR-ANA-01",
               "description": "Analysis currentValue consistent with Insights",
-              "status": "SKIP",
-              "details": "Skipped: Insights API not reachable (HTTP 0)",
+              "status": "FAIL",
+              "details": "Insights currentValue: \u20b9524,433.96 | Analysis currentValue: \u20b9455,841.60 | Delta: \u20b968592.36",
               "raw_response": "",
-              "tolerance": ""
+              "tolerance": "\u00b1\u20b9100"
             },
             {
               "check_id": "BR-ANA-02",
               "description": "Analysis schemeCategory sums to currentValue",
-              "status": "SKIP",
-              "details": "Skipped: Insights API not reachable (HTTP 0)",
+              "status": "PASS",
+              "details": "Sum: \u20b9455,841.60 | currentValue: \u20b9455,841.60 | Delta: \u20b90.00 | Breakdown: Mid Cap Fund: \u20b9352,370.52 | Arbitrage Fund: \u20b969,642.42 | FoF Domestic: \u20b999.90 | Small Cap Fund: \u20b933,728.74 | Aggressive Hybrid Fund: \u20b90.02",
               "raw_response": "",
               "tolerance": ""
             },
             {
               "check_id": "BR-ANA-02",
               "description": "Analysis schemeType sums to currentValue",
-              "status": "SKIP",
-              "details": "Skipped: Insights API not reachable (HTTP 0)",
+              "status": "FAIL",
+              "details": "Sum: \u20b9524,433.97 | currentValue: \u20b9455,841.60 | Delta: \u20b968592.37 | Breakdown: Debt Scheme: \u20b90.00 | Other Scheme: \u20b999.92 | Equity Scheme: \u20b9454,691.61 | Hybrid Scheme: \u20b969,642.44",
               "raw_response": "",
               "tolerance": ""
             },
             {
               "check_id": "BR-ANA-02",
               "description": "Analysis totalHoldings > 0",
-              "status": "SKIP",
-              "details": "Skipped: Insights API not reachable (HTTP 0)",
+              "status": "PASS",
+              "details": "totalHoldings: 23",
               "raw_response": "",
               "tolerance": ""
             }
@@ -756,31 +740,31 @@
           "phase_name": "Cross-API Consistency",
           "status": "FAIL",
           "total": 3,
-          "passed": 0,
-          "warnings": 0,
+          "passed": 1,
+          "warnings": 1,
           "failed": 1,
           "checks": [
             {
               "check_id": "BR-ANA-01",
               "description": "All 3 APIs reachable",
-              "status": "FAIL",
-              "details": "holding-folio: HTTP 200 | insights: HTTP 0 | analysis: HTTP 200",
+              "status": "PASS",
+              "details": "holding-folio: HTTP 200 | insights: HTTP 200 | analysis: HTTP 200",
               "raw_response": "",
               "tolerance": ""
             },
             {
               "check_id": "BR-ANA-01",
               "description": "currentValue consistent across 3 APIs",
-              "status": "SKIP",
-              "details": "Skipped: Cross-API consistency requires all 3 APIs reachable (holding-folio: HTTP 200, insights: HTTP 0, analysis: HTTP 200)",
+              "status": "FAIL",
+              "details": "holding-folio: \u20b9524,433.97 | insights: \u20b9524,433.96 | analysis: \u20b9455,841.60 | max \u0394: \u20b968592.37 | largest gap: between holding-folio (\u20b9524,433.97) and analysis (\u20b9455,841.60)",
               "raw_response": "",
-              "tolerance": ""
+              "tolerance": "\u00b1\u20b9100"
             },
             {
               "check_id": "BR-ANA-01",
               "description": "totalHoldings consistent across 3 APIs",
-              "status": "SKIP",
-              "details": "Skipped: Cross-API consistency requires all 3 APIs reachable (holding-folio: HTTP 200, insights: HTTP 0, analysis: HTTP 200)",
+              "status": "WARN",
+              "details": "holding-folio: 23 | insights: 29 | analysis: 23 | mismatch: 6 holdings",
               "raw_response": "",
               "tolerance": ""
             }
