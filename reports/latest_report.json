@@ -1,8 +1,8 @@
 {
-  "run_id": "9db4d98b",
-  "date": "2026-06-21",
-  "run_started": "2026-06-21T06:26:56.730719",
-  "run_completed": "2026-06-21T06:27:30.262536",
+  "run_id": "e9d6da8c",
+  "date": "2026-06-22",
+  "run_started": "2026-06-22T06:58:06.174540",
+  "run_completed": "2026-06-22T06:58:40.201774",
   "overall_status": "FAIL",
   "total_checks": 85,
   "passed": 44,
@@ -17,8 +17,8 @@
       "passed": 31,
       "warnings": 4,
       "failed": 3,
-      "run_started": "2026-06-21T06:26:56.731117",
-      "run_completed": "2026-06-21T06:27:04.822569",
+      "run_started": "2026-06-22T06:58:06.175031",
+      "run_completed": "2026-06-22T06:58:14.222157",
       "phases": [
         {
           "phase_number": 1,
@@ -73,7 +73,7 @@
               "check_id": "BR-REF-03",
               "description": "NAV date not stale (within 3 days)",
               "status": "WARN",
-              "details": "Stale holdings: 10 | INF109K01BL4: navDate=2026-06-15, nav=\u20b9107.13, 6d old | INF179K01756: navDate=2026-06-15, nav=\u20b956.4399, 6d old | INF740K01OK1: navDate=2026-06-15, nav=\u20b9153.991, 6d old | INF843K01013: navDate=2026-06-15, nav=\u20b9105.672, 6d old | INF760K01FR2: navDate=2026-06-15, nav=\u20b970.32, 6d old",
+              "details": "Stale holdings: 10 | INF109K01BL4: navDate=2026-06-15, nav=\u20b9107.13, 7d old | INF179K01756: navDate=2026-06-15, nav=\u20b956.4399, 7d old | INF740K01OK1: navDate=2026-06-15, nav=\u20b9153.991, 7d old | INF843K01013: navDate=2026-06-15, nav=\u20b9105.672, 7d old | INF760K01FR2: navDate=2026-06-15, nav=\u20b970.32, 7d old",
               "raw_response": "",
               "tolerance": ""
             }
@@ -231,7 +231,7 @@
               "check_id": "BR-INS-04",
               "description": "Per-holding NAV date fresh (within 3 days)",
               "status": "WARN",
-              "details": "Stale holdings: 15 | INF109K01BL4: navDate=2026-06-15, nav=\u20b9107.13, 6d old | INF178L01AX4: navDate=2026-06-15, nav=\u20b93871.85, 6d old | INF179K01756: navDate=2026-06-15, nav=\u20b956.44, 6d old | INF179K01CR2: navDate=2026-06-15, nav=\u20b9201.39, 6d old",
+              "details": "Stale holdings: 15 | INF109K01BL4: navDate=2026-06-15, nav=\u20b9107.13, 7d old | INF178L01AX4: navDate=2026-06-15, nav=\u20b93871.85, 7d old | INF179K01756: navDate=2026-06-15, nav=\u20b956.44, 7d old | INF179K01CR2: navDate=2026-06-15, nav=\u20b9201.39, 7d old",
               "raw_response": "",
               "tolerance": ""
             },
@@ -263,7 +263,7 @@
               "check_id": "BR-ANA-01",
               "description": "Analysis API returns valid structure",
               "status": "PASS",
-              "details": "currentValue: \u20b917,322,544.64 | schemeCategory[]: 11 | schemeType[]: 4",
+              "details": "currentValue: \u20b917,255,473.33 | schemeCategory[]: 11 | schemeType[]: 4",
               "raw_response": "",
               "tolerance": ""
             },
@@ -271,7 +271,7 @@
               "check_id": "BR-ANA-01",
               "description": "Analysis currentValue consistent with Insights",
               "status": "FAIL",
-              "details": "Insights currentValue: \u20b917,143,632.78 | Analysis currentValue: \u20b917,322,544.64 | Delta: \u20b9178911.86",
+              "details": "Insights currentValue: \u20b917,143,632.78 | Analysis currentValue: \u20b917,255,473.33 | Delta: \u20b9111840.55",
               "raw_response": "",
               "tolerance": "\u00b1\u20b9100"
             },
@@ -279,7 +279,7 @@
               "check_id": "BR-ANA-02",
               "description": "Analysis schemeCategory sums to currentValue",
               "status": "PASS",
-              "details": "Sum: \u20b917,322,544.63 | currentValue: \u20b917,322,544.64 | Delta: \u20b90.01 | Breakdown: Dynamic Asset Allocation or Balanced Advantage: \u20b9109.77 | Mid Cap Fund: \u20b9161,261.40 | Gilt Fund: \u20b9575,388.94 | Arbitrage Fund: \u20b90.02 | ELSS: \u20b9786,521.58 | Small Cap Fund: \u20b970,791.40 | Large Cap Fund: \u20b915,053,786.50 | Aggressive Hybrid Fund: \u20b90.02 | Low Duration Fund: \u20b9674,685.00",
+              "details": "Sum: \u20b917,255,473.33 | currentValue: \u20b917,255,473.33 | Delta: \u20b90.00 | Breakdown: Large & Mid Cap Fund: \u20b90.02 | Dynamic Asset Allocation or Balanced Advantage: \u20b9109.55 | Mid Cap Fund: \u20b9161,786.05 | Gilt Fund: \u20b9575,295.57 | Arbitrage Fund: \u20b90.02 | ELSS: \u20b9784,049.49 | Small Cap Fund: \u20b971,087.48 | FoF Domestic: \u20b90.02 | Large Cap Fund: \u20b914,988,269.03 | Aggressive Hybrid Fund: \u20b90.02 | Low Duration Fund: \u20b9674,876.08",
               "raw_response": "",
               "tolerance": ""
             },
@@ -287,7 +287,7 @@
               "check_id": "BR-ANA-02",
               "description": "Analysis schemeType sums to currentValue",
               "status": "FAIL",
-              "details": "Sum: \u20b917,143,632.96 | currentValue: \u20b917,322,544.64 | Delta: \u20b9178911.68 | Breakdown: Debt Scheme: \u20b91,247,063.04 | Other Scheme: \u20b90.01 | Equity Scheme: \u20b915,896,461.22 | Hybrid Scheme: \u20b9108.69",
+              "details": "Sum: \u20b917,143,632.96 | currentValue: \u20b917,255,473.33 | Delta: \u20b9111840.37 | Breakdown: Debt Scheme: \u20b91,247,063.04 | Other Scheme: \u20b90.01 | Equity Scheme: \u20b915,896,461.22 | Hybrid Scheme: \u20b9108.69",
               "raw_response": "",
               "tolerance": ""
             },
@@ -322,7 +322,7 @@
               "check_id": "BR-ANA-01",
               "description": "currentValue consistent across 3 APIs",
               "status": "FAIL",
-              "details": "holding-folio: \u20b917,143,632.78 | insights: \u20b917,143,632.78 | analysis: \u20b917,322,544.64 | max \u0394: \u20b9178911.86 | largest gap: between analysis (\u20b917,322,544.64) and holding-folio (\u20b917,143,632.78)",
+              "details": "holding-folio: \u20b917,143,632.78 | insights: \u20b917,143,632.78 | analysis: \u20b917,255,473.33 | max \u0394: \u20b9111840.55 | largest gap: between analysis (\u20b917,255,473.33) and holding-folio (\u20b917,143,632.78)",
               "raw_response": "",
               "tolerance": "\u00b1\u20b9100"
             },
@@ -427,8 +427,8 @@
       "passed": 13,
       "warnings": 2,
       "failed": 5,
-      "run_started": "2026-06-21T06:27:04.823186",
-      "run_completed": "2026-06-21T06:27:30.262529",
+      "run_started": "2026-06-22T06:58:14.222949",
+      "run_completed": "2026-06-22T06:58:40.201769",
       "phases": [
         {
           "phase_number": 1,
@@ -483,7 +483,7 @@
               "check_id": "BR-REF-03",
               "description": "NAV date not stale (within 3 days)",
               "status": "WARN",
-              "details": "Stale holdings: 4 | INF174K01LC6: navDate=2026-06-18, nav=\u20b942.5602, 3d old | INF109K01BL4: navDate=2026-06-18, nav=\u20b9108.42, 3d old | INF205K01KR8: navDate=2026-06-18, nav=\u20b936.7061, 3d old | INF754K01EA4: navDate=2026-06-18, nav=\u20b922.0967, 3d old",
+              "details": "Stale holdings: 14 | INF174K01LC6: navDate=2026-06-18, nav=\u20b942.5602, 4d old | INF109K01BL4: navDate=2026-06-18, nav=\u20b9108.42, 4d old | INF204K01323: navDate=2026-06-19, nav=\u20b94500.636, 3d old | INF843K01AO4: navDate=2026-06-19, nav=\u20b9126.667, 3d old | INF966L01689: navDate=2026-06-19, nav=\u20b9305.706, 3d old",
               "raw_response": "",
               "tolerance": ""
             },
@@ -491,7 +491,7 @@
               "check_id": "BR-REF-03",
               "description": "[PROD] All reference ISINs present in API",
               "status": "FAIL",
-              "details": "Missing from API: 6 | ISINs: INF846K01DP8, INF0QA701011, INF846K01164, INF192K01635, INF0QA701094 | Extra in API: 2",
+              "details": "Missing from API: 6 | ISINs: INF0QA701011, INF846K01164, INF846K01DP8, INF0QA701094, INF192K01635 | Extra in API: 2",
               "raw_response": "",
               "tolerance": ""
             },
